@@ -1,0 +1,82 @@
+{
+  "retrieved_at_utc": "2026-10-13T19:08:51.689987+00:00",
+  "source_url": "https://api.github.com/users/koolfox/repos?per_page=100&sort=updated",
+  "repositories": [
+    {
+      "name": "carla-local-autonomy",
+      "html_url": "https://github.com/koolfox/carla-local-autonomy",
+      "description": "Carla py autonomous helper ADAS",
+      "homepage": null,
+      "language": "Python",
+      "fork": false,
+      "archived": false,
+      "visibility": "public",
+      "updated_at": "2026-10-13T09:54:14Z",
+      "display_title": "CARLA Vision Research Console",
+      "description_fa": "کنسول پژوهشی برای رانندگی در شبیه‌ساز CARLA، بررسی تصویر دوربین و ثبت داده‌های آزمایش.",
+      "readme_url": "https://github.com/koolfox/carla-local-autonomy#readme",
+      "description_basis": "Public README introduction inspected"
+    },
+    {
+      "name": "drill",
+      "html_url": "https://github.com/koolfox/drill",
+      "description": null,
+      "homepage": null,
+      "language": "JavaScript",
+      "fork": false,
+      "archived": false,
+      "visibility": "public",
+      "updated_at": "2026-10-12T06:06:21Z",
+      "display_title": "Drill · دریل",
+      "description_fa": "تمرین تایپ کد با نمایش روی صفحه و اتصال به OpenCode؛ برای یادگیری و کار روی کد.",
+      "readme_url": "https://github.com/koolfox/drill#readme",
+      "description_basis": "Public README introduction inspected"
+    },
+    {
+      "name": "hooshpro-core-cms",
+      "html_url": "https://github.com/koolfox/hooshpro-core-cms",
+      "description": "a tidy cms for internal use and helping customers getting things done faster.",
+      "homepage": "",
+      "language": "TypeScript",
+      "fork": false,
+      "archived": false,
+      "visibility": "public",
+      "updated_at": "2026-02-23T08:06:07Z",
+      "display_title": "HooshPro Core CMS",
+      "description_fa": "سامانهٔ مدیریت محتوا برای کارهای داخلی و پروژه‌های مشتریان، طبق معرفی مخزن.",
+      "readme_url": "https://github.com/koolfox/hooshpro-core-cms#readme",
+      "description_basis": "Public repository description"
+    },
+    {
+      "name": "loopert",
+      "html_url": "https://github.com/koolfox/loopert",
+      "description": "an enhanced agentic cli to do everything UI and text based, automate and elevate through loops of loopert.",
+      "homepage": "",
+      "language": "JavaScript",
+      "fork": false,
+      "archived": false,
+      "visibility": "public",
+      "updated_at": "2026-02-21T19:12:54Z",
+      "display_title": "Loopert",
+      "description_fa": "نمونهٔ اولیهٔ ابزار خودکارسازی کارهای مرورگر و دسکتاپ با کمک مدل‌های زبانی.",
+      "readme_url": "https://github.com/koolfox/loopert#readme",
+      "description_basis": "Public README introduction inspected"
+    },
+    {
+      "name": "FS-Snapshot-Cache",
+      "html_url": "https://github.com/koolfox/FS-Snapshot-Cache",
+      "description": "Filesystem full-page cache for anonymous visitors (WooCommerce-safe) with gzip/brotli/html snapshots, precise invalidation, admin tools, disk quota sweep — plus optional LCP Boost (with safe exclusions for Gravity Forms + reCAPTCHA).",
+      "homepage": "https://hoosh.pro",
+      "language": "PHP",
+      "fork": false,
+      "archived": false,
+      "visibility": "public",
+      "updated_at": "2025-08-13T19:41:23Z",
+      "display_title": "FS Snapshot Cache",
+      "description_fa": "افزونهٔ کش صفحات وردپرس؛ نگهداری نسخهٔ آمادهٔ صفحه و پاک‌کردن آن پس از تغییر محتوا.",
+      "readme_url": "https://github.com/koolfox/FS-Snapshot-Cache#readme",
+      "description_basis": "Public README introduction inspected"
+    }
+  ],
+  "scope": "Five public repositories selected for the homepage by the user. No private repository names or contents included."
+}

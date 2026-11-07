@@ -1,0 +1,1249 @@
+{
+  "schema_version": "1.3",
+  "selection_status": "Final classroom source roles: Hu structural anchor; Bianchi simulation; Gehin clinical context; Tao baseline RNA. Marguerie and other papers are complementary; no fixed recent-three rule.",
+  "retrieved_on": "2026-10-14",
+  "review_type": "purposeful narrative selection; not a systematic review",
+  "selection_window": {
+    "start": "2013-01-01",
+    "end": "2026-10-14",
+    "note": "Foundational primary studies plus recent optional extensions; not a systematic search window"
+  },
+  "selection_keywords": [
+    "TNF-alpha",
+    "adalimumab",
+    "Fab",
+    "Fc",
+    "structure",
+    "epitope",
+    "neutralisation",
+    "rheumatoid arthritis",
+    "CRP",
+    "TOP2A",
+    "SIRPG",
+    "proliferation",
+    "cell cycle",
+    "RNA",
+    "DNA",
+    "cancer target comparison"
+  ],
+  "verification_method": "Publisher, PubMed and Europe PMC final article methods/results compared; publisher-deposited Crossref dates checked; public structural/data metadata checked live. For Marguerie, ADA-to-SIRPG and SIRPG-knockout-to-TOP2A experiments were inspected separately and all GEO sample labels checked. These are attribution/design/data checks, not independent scientific reproduction.",
+  "central_paper_count": 4,
+  "papers": [
+    {
+      "id": "gehin_2024_admyra",
+      "title": "Therapeutic serum level for adalimumab in rheumatoid arthritis: explorative analyses of data from a randomised phase III trial",
+      "first_author": "Johanna Elin Gehin",
+      "journal": "RMD Open",
+      "year": 2024,
+      "volume": "10",
+      "issue": "4",
+      "article_number": "e004888",
+      "publication_date": "2024-11-13",
+      "doi": "10.1136/rmdopen-2024-004888",
+      "pmid": "39537558",
+      "pmcid": "PMC11575345",
+      "trial_id": "NCT02744755",
+      "study_design": "Post hoc longitudinal concentration-outcome analysis of a 48-week randomised phase III biosimilarity trial (ADMYRA); not a randomised trial of concentration-guided dosing",
+      "cohort": {
+        "disease": "active rheumatoid arthritis",
+        "tnf_inhibitor_naive": true,
+        "all_received_concomitant_methotrexate": true,
+        "drug_groups": [
+          "GP2017 adalimumab biosimilar",
+          "reference adalimumab"
+        ],
+        "analyses_pooled_drug_groups": true,
+        "participants_with_trough_data_by_week": {
+          "12": 336,
+          "24": 330,
+          "48": 302
+        }
+      },
+      "endpoints": [
+        "DAS28-ESR remission and low disease activity",
+        "CRP concentration",
+        "Longitudinal serum adalimumab trough concentration"
+      ],
+      "findings": {
+        "trough_threshold_associated_with_remission_mg_per_l": 3.9,
+        "remission_odds_ratio": 3.88,
+        "remission_odds_ratio_ci95": [
+          1.8,
+          8.38
+        ],
+        "crp_association": "Lower CRP at trough concentrations at or above 3.9 mg/L",
+        "interpretation": "The approximately 4 mg/L proposal is population-specific association evidence, not a universal threshold or demonstrated benefit of dosing intervention."
+      },
+      "data_availability": {
+        "public_individual_level_dataset": false,
+        "access": "Data available from Sandoz upon reasonable request",
+        "accession": null,
+        "access_requested": false
+      },
+      "evidence_limits": [
+        "Post hoc concentration-response associations are not randomised exposure comparisons",
+        "Stringent trial inclusion criteria limit external validity",
+        "All participants received methotrexate; cannot isolate its influence on drug levels or immunogenicity",
+        "Selected continuation after week 24 and changing denominators require care",
+        "Does not establish thresholds for psoriasis, AS or lupus",
+        "No TOP2A, RNA expression or patient-specific binding geometry endpoint; does not complete the indirect mechanistic bridge"
+      ],
+      "primary_sources": [
+        "https://rmdopen.bmj.com/content/10/4/e004888",
+        "https://pubmed.ncbi.nlm.nih.gov/39537558/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11575345/fullTextXML"
+      ],
+      "publication_status": "peer-reviewed original research article",
+      "project_role_fa": "زمینهٔ بالینی آدالیموماب و CRP در آرتریت روماتوئید",
+      "rationale_fa": "بین داروی واقعی، آزمایش CRP و فعالیت RA ارتباط بررسی می‌کند و تفاوت سنجش بالینی با مشاهدهٔ شکل پروتئین را روشن می‌سازد.",
+      "summary_fa": "در تحلیل ثانویهٔ داده‌های ۴۸هفته‌ای کارآزمایی ADMYRA، غلظت سرمی بیشتر آدالیموماب با فعالیت کمتر بیماری و CRP کمتر همراه بود. همهٔ بیماران متوترکسات همراه دریافت می‌کردند.",
+      "critique_fa": "ارتباط آماری، اثر تنظیم دوز را ثابت نمی‌کند؛ این تحلیل شکل اتصال در هر بیمار را اندازه نگرفته است. دادهٔ فردی عمومی نیست و آستانهٔ پژوهش، توصیهٔ درمان عمومی محسوب نمی‌شود.",
+      "verification": {
+        "bibliographic_metadata_checked": true,
+        "primary_full_methods_checked": true,
+        "data_access_statement_checked": true,
+        "scientific_results_independently_reproduced": false,
+        "evidence_pointers": [
+          "PubMed and Europe PMC publication date/DOI",
+          "Methods: post hoc ADMYRA analysis and concomitant methotrexate",
+          "Results: longitudinal sample denominators and CRP association",
+          "Data availability: nonpublic Sandoz data upon request"
+        ]
+      },
+      "current_selection_role": "foundational_RA_clinical"
+    },
+    {
+      "id": "tao_2021_ra_rnaseq",
+      "title": "Multiomics and Machine Learning Accurately Predict Clinical Response to Adalimumab and Etanercept Therapy in Patients With Rheumatoid Arthritis",
+      "first_author": "Weiyang Tao",
+      "journal": "Arthritis & Rheumatology",
+      "year": 2021,
+      "doi": "10.1002/art.41516",
+      "pmid": "32909363",
+      "pmcid": "PMC7898388",
+      "publication_status": "peer-reviewed original research article; journal issue 2021, electronic publication 2020",
+      "project_role_fa": "برای شروع: RNA اولیهٔ بیمار RA و پاسخ درمان",
+      "rationale_fa": "دیتاست GSE138746 نام دارو، نوع سلول و پاسخ شش‌ماهه دارد؛ برای فهم طراحی RNA-seq در زمینهٔ RA مناسب است. در مرحلهٔ فعلی، رکورد و ماتریس را می‌خوانیم.",
+      "summary_fa": "RNA سلول‌های خون ۸۰ بیمار RA پیش از آدالیموماب یا اتانرسپت بررسی و در کنار پاسخ شش‌ماهه تحلیل شد. مطالعه نشانگرها و مدل‌های پیش‌بینی پاسخ را بررسی کرد؛ مدل‌ها در پروژه بازتولید نشده‌اند.",
+      "critique_fa": "RNA اولیه است. بسیاری از DEG/DMPهای مقاله پس از تصحیح چندآزمونی معنادار نبودند و از P اسمی استفاده شد. پیگیری ۹ بیمار تغییر‌دهندهٔ درمان، cohort بزرگ مستقل نیست. قطع زودهنگام در برخی بیماران به برچسب عدم پاسخ بر اساس آخرین ویزیت انجامید. مدل مقاله بازتولید نشده و تغییر پس از دارو یا مهار TOP2A سنجیده نشده است.",
+      "study_design": "Observational BiOCURA baseline multi-omics and subsequent six-month clinical response; not paired pre/post RNA",
+      "data_availability": {
+        "repository": "NCBI GEO",
+        "accession": "GSE138746",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE138746",
+        "metadata_libraries": 240,
+        "participants": 80,
+        "PBMC_processed_columns_inspected": 79,
+        "ADA_PBMC_processed_columns_inspected": 37,
+        "analysis_executed_in_project": false,
+        "verified_on": "2026-10-14",
+        "audit_path": "data/metadata/ra-rnaseq-learning.json"
+      },
+      "current_selection_role": "foundational_RA_RNA_data",
+      "verification": {
+        "primary_abstract_and_publication_record_checked": true,
+        "GEO_metadata_and_PBMC_matrix_inspected": true,
+        "ML_or_expression_response_results_reproduced": false
+      },
+      "primary_sources": [
+        "https://doi.org/10.1002/art.41516",
+        "https://pubmed.ncbi.nlm.nih.gov/32909363/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7898388/fullTextXML"
+      ],
+      "full_text_review_20261023": {
+        "at_utc": "2026-10-23T13:55:45.909645+00:00",
+        "source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7898388/fullTextXML",
+        "scope": "Methods/Results/Discussion design and limitations; not replication",
+        "nominal_p_selection": true,
+        "followup_switched_patients": 9,
+        "baseline_patients_ADA": 38,
+        "baseline_patients_ETN": 42,
+        "GEO_super_series_as_printed": "GSE138747"
+      }
+    },
+    {
+      "id": "bianchi_2026_antibody_dynamics",
+      "title": "Antigen binding triggers long-range conformational changes in monoclonal antibodies",
+      "first_author": "Davide Bianchi",
+      "journal": "Frontiers in Immunology",
+      "year": 2026,
+      "year_basis": "first online publication date",
+      "volume": "16",
+      "article_number": "1680199",
+      "doi": "10.3389/fimmu.2025.1680199",
+      "pmid": "41583438",
+      "pmcid": "PMC12824876",
+      "publication_date": "2026-01-08",
+      "publication_dates": {
+        "publisher_online": "2026-01-08",
+        "publisher_deposited_crossref_online": "2026-01-08",
+        "europe_pmc_first_publication": "2026-01-08",
+        "publisher_volume_year_label": 2025,
+        "pubmed_bibliographic_year": 2025,
+        "note": "Online publication is 2026; volume 16 and PubMed bibliography use 2025. Do not infer the online date from the DOI or volume label."
+      },
+      "publication_status": "peer-reviewed original research article",
+      "project_role_fa": "برای مرحلهٔ بعد: مدل‌سازی حرکت آدالیموماب",
+      "rationale_fa": "مستقیماً آدالیموماب/TNF را در سه‌بعد بررسی می‌کند و مدل‌های عمومی دارد؛ برای فهم بخش‌های Fab و Fc و تفاوت مدل با ساختار تجربی مناسب است.",
+      "summary_fa": "نویسندگان از قالب‌های بلوری، مدل آنتی‌بادی کامل ساختند و حالت‌های اتصال و قندگذاری را شبیه‌سازی کردند. در مدل‌ها، اتصال به آنتی‌ژن با تغییر شکل و هم‌حرکتی بخش‌های آنتی‌بادی و دسترسی سطح Fc همراه بود.",
+      "critique_fa": "پژوهش مدل‌سازی و شبیه‌سازی است؛ ساختار تجربی جدید آنتی‌بادی کامل یا اثر درمان در بیمار را اندازه نمی‌گیرد. پیش‌بینی عملکرد نیازمند آزمایش است. دانشجو برای این فاز لازم نیست شبیه‌سازی طولانی اجرا کند.",
+      "study_design": "Chimeric full-IgG homology modelling and accelerated molecular dynamics; no new patient efficacy study or experimentally solved full-adalimumab structure",
+      "cohort": {
+        "human_patient_cohort": false,
+        "new_bound_simulation_systems": 4,
+        "antibodies": [
+          "adalimumab",
+          "avelumab"
+        ],
+        "antigens": [
+          "TNF-alpha",
+          "PD-L1"
+        ],
+        "glycosylation_states": [
+          "G0",
+          "G0F"
+        ],
+        "unbound_comparators": "Previously published trajectories reanalysed",
+        "project_focus": "adalimumab/TNF; avelumab is a methodological comparator only"
+      },
+      "methods": {
+        "template_pdb_ids": [
+          "3WD5",
+          "1HZH",
+          "5GRJ"
+        ],
+        "adalimumab_template_roles": {
+          "3WD5": "experimental TNF-adalimumab Fab structure",
+          "1HZH": "experimental IgG1 template for backbone/hinge/Fc; not an experimental full-adalimumab structure"
+        },
+        "classical_MD_before_accelerated_MD_ns": 50,
+        "accelerated_MD_per_new_complex_microseconds": 1,
+        "structural_descriptors": [
+          "Fab/Fc geometry",
+          "dynamic correlations",
+          "PCA",
+          "solvent-accessible surface area",
+          "free-energy profiles"
+        ],
+        "student_required_to_run_MD": false
+      },
+      "endpoints": [
+        "Computational antibody conformations and correlated domain motion",
+        "Fc receptor-site accessibility descriptors; not measured clinical response or measured ADCC"
+      ],
+      "findings": {
+        "interpretation": "Antigen-associated conformational changes are reported in modelled IgG1 systems; functional implications remain computational predictions.",
+        "new_Xray_or_cryoEM_structure": false,
+        "clinical_RA_efficacy_measured": false,
+        "new_FcgammaR_or_ADCC_assay_performed": false
+      },
+      "data_availability": {
+        "public_individual_level_dataset": false,
+        "public_structural_models": true,
+        "repository": "University of Milan Dataverse",
+        "dataset_doi": "10.13130/RD_UNIMI/FULQXI",
+        "url": "https://doi.org/10.13130/RD_UNIMI/FULQXI",
+        "api_url": "https://dataverse.unimi.it/api/datasets/:persistentId/?persistentId=doi:10.13130/RD_UNIMI/FULQXI",
+        "metadata_http_status_verified": 200,
+        "version_state_verified": "RELEASED",
+        "release_time": "2026-01-07T11:32:41Z",
+        "license": "CC BY 4.0",
+        "license_url": "http://creativecommons.org/licenses/by/4.0",
+        "all_files_unrestricted": true,
+        "record_total_bytes": 8223230,
+        "files": [
+          {
+            "name": "adalimumab_g0f_tnf.pdb",
+            "datafile_id": 369991,
+            "size_bytes": 2087315,
+            "experimental_structure": false
+          },
+          {
+            "name": "adalimumab_g0_tnf.pdb",
+            "datafile_id": 369990,
+            "size_bytes": 2083017,
+            "experimental_structure": false
+          },
+          {
+            "name": "avelumab_g0f_pdl1.pdb",
+            "datafile_id": 369989,
+            "size_bytes": 2027422,
+            "experimental_structure": false
+          },
+          {
+            "name": "avelumab_g0_pdl1.pdb",
+            "datafile_id": 369992,
+            "size_bytes": 2023511,
+            "experimental_structure": false
+          },
+          {
+            "name": "README.txt",
+            "datafile_id": 369993,
+            "size_bytes": 1965
+          }
+        ],
+        "full_MD_trajectories_listed_in_repository": false,
+        "verified_on": "2026-10-13",
+        "files_downloaded_during_literature_review": false,
+        "download_or_MD_run_required_for_initial_course_review": false
+      },
+      "evidence_limits": [
+        "Modelled full-IgG conformations rely on template construction, glycosylation choices and simulation assumptions",
+        "Correlated motion or surface exposure does not independently prove Fc receptor binding or ADCC activity",
+        "Authors propose functional experiments for subsequent validation",
+        "No human clinical outcomes or patient-specific TNF structures are measured",
+        "Repository coordinate models are not experimental PDB deposits and do not reproduce a complete MD trajectory"
+      ],
+      "verification": {
+        "bibliographic_metadata_checked": true,
+        "primary_full_methods_checked": true,
+        "repository_metadata_and_license_checked": true,
+        "scientific_results_independently_reproduced": false,
+        "evidence_pointers": [
+          "Publisher header: online date and volume-year label",
+          "Methods 2.1: homology templates",
+          "Methods 2.2-2.3: MD protocol and descriptors",
+          "Discussion: experimental Fc-gamma-R/ADCC validation proposed",
+          "Data availability statement and live Dataverse API"
+        ]
+      },
+      "primary_sources": [
+        "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1680199/full",
+        "https://pubmed.ncbi.nlm.nih.gov/41583438/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12824876/fullTextXML",
+        "https://api.crossref.org/works/10.3389/fimmu.2025.1680199",
+        "https://dataverse.unimi.it/api/datasets/:persistentId/?persistentId=doi:10.13130/RD_UNIMI/FULQXI"
+      ],
+      "current_selection_role": "later_structural_simulation"
+    },
+    {
+      "id": "marguerie_2025_sirpg_tcells",
+      "title": "Enhancement of activation-induced T cell proliferation by SIRPG in a CD47-independent manner",
+      "first_author": "Flavien Marguerie",
+      "authors": [
+        "Flavien Marguerie",
+        "Mohammad A. Saifi",
+        "Benjamin Geary",
+        "David Barnes",
+        "Laura Lim",
+        "Anna Helena Jonsson",
+        "I-Cheng Ho"
+      ],
+      "journal": "Frontiers in Immunology",
+      "year": 2025,
+      "volume": "16",
+      "article_number": "1668361",
+      "publication_date": "2025-11-21",
+      "doi": "10.3389/fimmu.2025.1668361",
+      "pmid": "41357240",
+      "pmcid": "PMC12678352",
+      "publication_dates": {
+        "publisher_online": "2025-11-21",
+        "publisher_deposited_crossref_online": "2025-11-21",
+        "europe_pmc_first_publication": "2025-11-21"
+      },
+      "publication_status": "peer-reviewed original research article",
+      "project_role_fa": "برای مرحلهٔ بعد: آزمایش‌های جدا دربارهٔ SIRPG و TOP2A",
+      "rationale_fa": "دو مداخلهٔ مشخص دارد: اثر آدالیموماب بر SIRPG و اثر حذف SIRPG بر TOP2A/تکثیر. برای ساختن پرسش واسطهٔ سلولی مفید است؛ مسیر کامل یا جهت اثر دارو را اثبات نمی‌کند.",
+      "summary_fa": "آدالیموماب در سلول T فعال‌شدهٔ اهداکنندهٔ سالم، SIRPG سطحی را افزایش داد. در آزمایش جدا، حذف SIRPG با کاهش RNA ژن TOP2A و ژن‌های چرخه و تکثیر همراه بود؛ qPCR نیز گزارش شد.",
+      "critique_fa": "افزایش SIRPG با دارو و کاهش TOP2A با حذف SIRPG، دو آزمایش جدا هستند؛ اثر دارو بر TOP2A یا میانجی‌گری اثبات نشده است. دادهٔ RNA گروه آدالیموماب ندارد و سلول سالم فعال‌شده، بیمار RA نیست.",
+      "study_design": "Human T-cell pharmacological stimulation and separate CRISPR SIRPG loss-of-function experiments, bulk RNA-seq, independent-donor qPCR and proliferation assays; not a clinical adalimumab efficacy or ADA-to-TOP2A mediation trial",
+      "cohort": {
+        "adalimumab_experiment": "Activated peripheral T cells from healthy donors; resting unstimulated cells studied as a context comparator",
+        "SIRPG_RNAseq_experiment_donors_reported": 6,
+        "synovial_fluid_observational_participants": 5,
+        "synovial_fluid_diagnosis_as_reported": "inflammatory arthritis; not asserted to be a uniform RA cohort",
+        "synovial_comparator_healthy_donors": 5,
+        "Jurkat_cell_line": "Used in separate knockout/rescue/domain experiments; a leukaemia-derived line is not clinical cancer evidence",
+        "sample_count_interpretation": "GEO library counts are not independent patient counts; article reports a poor-quality CD8 pair excluded in its described analysis. The entire 46-record series is not automatically the selected day-4 analysis cohort."
+      },
+      "methods": {
+        "drug_experiment_evidence_pointer": "Results: Differential effects of TNF-alpha inhibitors on the expression of SIRPG; Figure 2 and Supplementary Figure S2",
+        "drug_comparators": [
+          "adalimumab",
+          "etanercept",
+          "certolizumab",
+          "tocilizumab"
+        ],
+        "RNAseq_experiment": "WT and SIRPG knockout cells were mixed 1:1 per donor, restimulated with anti-CD3/IL-2, sorted by SIRPG and CD4/CD8, and compared in a separate perturbation experiment",
+        "TOP2A_evidence_pointer": "Figure 3D-F: pooled cell-cycle genes and independent-donor qPCR; Figure 4: proliferation and Ki67",
+        "student_required_to_run_CRISPR_or_RNAseq": false
+      },
+      "endpoints": [
+        "Surface SIRPG by flow cytometry after T-cell activation with/without TNF inhibitors",
+        "RNA abundance after SIRPG deletion, including TOP2A and other cell-cycle genes",
+        "T-cell proliferation and Ki67 in the SIRPG perturbation experiments"
+      ],
+      "findings": {
+        "adalimumab_to_SIRPG": "Increase in activated healthy-donor T cells; not increased in unstimulated resting T cells",
+        "SIRPG_knockout_to_TOP2A": "Lower TOP2A RNA and cell-cycle expression in a separate knockout experiment; qPCR confirmation reported",
+        "adalimumab_to_TOP2A_directly_tested": false,
+        "SIRPG_mediates_adalimumab_effect_on_TOP2A_established": false,
+        "adalimumab_to_TOP2A_direction": "Undetermined: cannot infer increase, decrease or no change from composing two separate experiments",
+        "clinical_RA_efficacy_or_cancer_response_measured": false
+      },
+      "data_availability": {
+        "repository": "NCBI Gene Expression Omnibus",
+        "accession": "GSE296196",
+        "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296196",
+        "metadata_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296196&targ=all&form=text&view=quick",
+        "public_on": "2025-12-10",
+        "public_RNA_dataset": true,
+        "metadata_http_status_verified": 200,
+        "verified_on": "2026-10-13",
+        "live_sample_record_counts": {
+          "total": 46,
+          "SIRPG_WT": 23,
+          "SIRPG_KO": 23,
+          "CD4": 22,
+          "CD8": 24,
+          "Day_2": 22,
+          "Day_4": 24
+        },
+        "all_sample_treatment_labels": "Anti-CD3, IL-2",
+        "adalimumab_treatment_arm_present": false,
+        "series_design": "Healthy-donor PBMC derivatives; CRISPR SIRPG WT/KO; activated for editing, rested/maintained in IL-2 and restimulated; sorted CD4/CD8 on days 2 and 4",
+        "processed_count_file_listed": "GSE296196_Counts_SK69M2SIRPG.xlsx",
+        "processed_count_file_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE296nnn/GSE296196/suppl/GSE296196_Counts_SK69M2SIRPG.xlsx",
+        "raw_or_processed_expression_files_downloaded": false,
+        "expression_analysis_executed": false,
+        "license": "No dataset-specific licence assertion made; public repository access is verified"
+      },
+      "evidence_limits": [
+        "Pharmacological ADA-to-SIRPG and genetic SIRPG-to-TOP2A results come from separate experiments; they do not establish a completed causal mediation pathway",
+        "Direction of any ADA-to-TOP2A effect remains untested and must not be labelled suppression",
+        "Healthy-donor activated T cells, inflammatory-arthritis synovial fluid and Jurkat rescue models are different systems",
+        "Comparison of molecules with and without Fc is not an isolated experimental proof of an Fc mechanism",
+        "RNA abundance after a knockout is not a TOP2A atomic structure or direct antibody-target binding measurement",
+        "GEO has no adalimumab arm; it cannot estimate drug effects on TOP2A",
+        "Donor, library, sorted subset and timepoint counts must not be treated as interchangeable units"
+      ],
+      "verification": {
+        "bibliographic_metadata_checked": true,
+        "publisher_peer_review_and_full_methods_checked": true,
+        "drug_and_knockout_experiments_read_separately": true,
+        "GEO_series_and_all_sample_metadata_checked_live": true,
+        "scientific_results_independently_reproduced": false,
+        "evidence_pointers": [
+          "Publisher header/editor-reviewers and Crossref online date",
+          "Results Figure 2 and unstimulated-cell comparator Figure 2F",
+          "Results Figure 3: six donors, excluded poor-quality pair, pooled DEGs and independent qPCR",
+          "Figure 4: proliferation/Ki67",
+          "Methods/Data availability and live GSE296196 sample treatment, genotype, subset and time labels"
+        ]
+      },
+      "primary_sources": [
+        "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2025.1668361/full",
+        "https://pubmed.ncbi.nlm.nih.gov/41357240/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12678352/fullTextXML",
+        "https://api.crossref.org/works/10.3389/fimmu.2025.1668361",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296196&targ=all&form=text&view=quick"
+      ],
+      "current_selection_role": "later_indirect_comparison"
+    }
+  ],
+  "structural_foundation_not_counted_in_recent_three": {
+    "title": "Comparison of the inhibition mechanisms of adalimumab and infliximab in treating tumor necrosis factor alpha-associated diseases from a molecular view",
+    "first_author": "Shi Hu",
+    "year": 2013,
+    "doi": "10.1074/jbc.M113.491530",
+    "pmid": "23943614",
+    "pdb_id": "3WD5",
+    "pdb_release_date": "2013-08-14",
+    "experimental_method": "X-ray diffraction",
+    "resolution_angstrom": 3.1,
+    "coordinate_content": "TNF-alpha with adalimumab Fab; not full-length adalimumab IgG",
+    "asymmetric_unit": "One TNF chain plus one Fab light chain and one Fab heavy chain; full TNF trimer depiction requires verified crystallographic transformations",
+    "primary_source": "https://www.rcsb.org/structure/3WD5",
+    "id": "hu_2013_tnf_adalimumab"
+  },
+  "supplementary_reference_not_a_fourth_review": {
+    "first_author": "Jiyeol Yoon",
+    "year": 2025,
+    "doi": "10.3390/ijms26178741",
+    "pmid": "40943657",
+    "role": "RA/AS context for assay comparison; not an efficacy trial",
+    "url": "https://www.mdpi.com/1422-0067/26/17/8741"
+  },
+  "regulatory_safety_context": {
+    "drug": "HUMIRA (adalimumab)",
+    "label_revision": "2025-12",
+    "scope": "RA, PsA, AS and plaque psoriasis appear among labelled indications; SLE does not. Section 5.9 discusses lupus-like syndrome as a potential adverse effect.",
+    "source": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/125057s425lbl.pdf"
+  },
+  "project_evidence_limits": [
+    "The project does not reproduce published MD, wet-lab, RNA-seq or clinical results; the local coordinate/contact analysis has its own limited scope",
+    "Verified bibliography or peer review does not independently validate every scientific conclusion",
+    "ADA directly targets TNF; direct TOP2A binding, suppression or anticancer efficacy is not established by these sources",
+    "Marguerie ADA-to-SIRPG increase and SIRPG-knockout-to-TOP2A decrease are separate experiments; direction and causal mediation for ADA-to-TOP2A are undetermined",
+    "GSE296196 has no adalimumab treatment arm; its WT/KO RNA libraries do not measure response to adalimumab",
+    "Shi uses SW982 and A549 cancer-derived models and PluriSIn #2; do not reinterpret its intervention as adalimumab or its models as RA/cancer patient proof",
+    "Modelled full IgG coordinates are not experimental full-adalimumab crystal structures",
+    "Ubah VNAR binders are mechanistic comparators, not adalimumab or an established superior RA therapy",
+    "CRP/concentration associations do not measure molecular geometry or justify dosing decisions",
+    "Reference mRNA/protein sequences are not RNA abundance measurements, patient variants or a solved RNA fold",
+    "Old direct experimental foundations remain required and are not counted among the three recent reviews",
+    "No copyrighted full text or identifying clinical records are committed in this metadata file"
+  ],
+  "selection_basis": "Current user-confirmed order is RA, adalimumab/TNF mechanism and data literacy; learn codons and TOP2A in parallel, then choose an evidence-supported advanced question. Hu 2013, Gehin 2024 and Tao 2021 serve different foundational roles; recency alone does not determine the teaching order.",
+  "supplementary_papers_not_counted_in_central_three": [
+    {
+      "id": "veerasubramanian_2026_mlr",
+      "title": "Combination antagonism of TNF superfamily signaling for T cell immunosuppression",
+      "first_author": "Praveen Krishna Veerasubramanian",
+      "year": 2026,
+      "publication_date": "2026-07-23",
+      "doi": "10.3389/fimmu.2026.1867995",
+      "pmid": "42564165",
+      "pmcid": "PMC13442446",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13442446/",
+      "current_selection_role": "supplementary; closest inspected drug/RNA design for proposed indirect TOP2A follow-up",
+      "study_design": "In-vitro mixed lymphocyte reaction, single and combination inhibitors, sorted T-cell RNA on day 5",
+      "dataset": "GSE339038",
+      "independent_donors": 4,
+      "libraries": 64,
+      "main_findings": "Combination treatments suppressed broader transcriptional programs than monotherapies; TOP2A mentioned in combination-specific proliferation gene groups",
+      "limitations": [
+        "Not a rheumatoid arthritis patient trial",
+        "Combination-specific findings cannot be assigned to adalimumab alone",
+        "No TOP2A enzyme-inhibition assay",
+        "Project count inspection is descriptive, not full paper reproduction"
+      ],
+      "source_provenance": {
+        "id": "veerasubramanian",
+        "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13442446/fullTextXML",
+        "retrieved_at_utc": "2026-10-13T17:59:15.399007+00:00",
+        "bytes": 157717,
+        "sha256": "809dc635fe1d9e2690c3d1242a16702f6622b9972d99afd4e9bdb14f4acf09b3",
+        "status": "downloaded"
+      }
+    },
+    {
+      "id": "ubah_2025_tnf_vnar",
+      "title": "The structural basis for the selective antagonism of soluble TNF-alpha by shark variable new antigen receptors",
+      "first_author": "Obinna C. Ubah",
+      "journal": "Nature Communications",
+      "year": 2025,
+      "year_basis": "first online publication date verified across publisher-deposited Crossref, Europe PMC and RCSB citation",
+      "volume": "17",
+      "issue": "1",
+      "article_number": "256",
+      "publication_date": "2025-11-29",
+      "doi": "10.1038/s41467-025-66967-3",
+      "pmid": "41318641",
+      "pmcid": "PMC12783797",
+      "publication_status": "peer-reviewed original research article",
+      "project_role_fa": "شواهد تجربی اهمیت محل اتصال روی TNF",
+      "rationale_fa": "ساختارهای بلوری واقعی و آزمون اتصال/خنثی‌سازی دارد و محل اتصال را با آدالیموماب مقایسه می‌کند؛ برای توضیح نقش شکل و محل اتصال مناسب است.",
+      "summary_fa": "دو قطعهٔ کوچک آنتی‌بادی به نام C4 و D1 در محل‌های متفاوتی به TNF متصل شدند. ساختارها با آزمایش‌های اتصال و جلوگیری از پیام‌رسانی بررسی شدند؛ بخشی از محل اتصال C4 با آدالیموماب هم‌پوشانی دارد.",
+      "critique_fa": "این قطعات خود آدالیموماب نیستند و نتیجهٔ مولکولی/سلولی، برتری درمانی در بیماران RA را ثابت نمی‌کند. مقاله برای مقایسهٔ محدود محل اتصال استفاده می‌شود، نه انتخاب داروی جدید.",
+      "study_design": "X-ray structures of soluble TNF-alpha with VNAR-C4 and VNAR-D1, accompanied by binding, receptor-blocking and cell-based functional assays",
+      "cohort": {
+        "human_RA_efficacy_cohort": false,
+        "binders": [
+          "VNAR-C4",
+          "VNAR-D1",
+          "related VNAR Fc-fusion constructs"
+        ],
+        "target": "soluble TNF-alpha",
+        "assay_models": [
+          "BLI binding",
+          "receptor-blocking ELISA",
+          "L929 cytotoxicity-neutralisation assay",
+          "THP-1 surface-TNF binding",
+          "activated healthy-donor CD4 T cells"
+        ],
+        "patient_count_for_RA_efficacy": null
+      },
+      "methods": {
+        "new_experimental_structures": [
+          "9BN7",
+          "9DJW"
+        ],
+        "structure_method": "X-ray crystallography",
+        "adalimumab_structural_comparator": "3WD5, Figure 2c and supplementary Figure 2",
+        "adalimumab_cell_binding_comparator": "Figure 5d, membrane-TNF binding on activated THP-1 cells",
+        "student_required_to_run_new_experiment": false
+      },
+      "endpoints": [
+        "Experimental epitope/paratope geometry",
+        "Binding and TNF-receptor blocking",
+        "In-vitro TNF neutralisation and membrane-TNF-associated responses"
+      ],
+      "findings": {
+        "interpretation": "Distinct epitopes can change TNF recognition and functional responses. Relevant to understanding neutralisation mechanisms but not clinical adalimumab efficacy.",
+        "direct_adalimumab_comparisons_present": true,
+        "new_structure_of_adalimumab": false,
+        "human_RA_treatment_superiority_established": false
+      },
+      "data_availability": {
+        "public_individual_level_dataset": false,
+        "public_experimental_coordinates": true,
+        "repository": "RCSB Protein Data Bank",
+        "pdb_entries": [
+          {
+            "id": "9BN7",
+            "binder": "VNAR-C4",
+            "current_PDB_resolution_angstrom": 1.92,
+            "article_reported_resolution_angstrom": 1.99,
+            "assembly_1_protein_chains": 6,
+            "assembly_1_interpretation": "TNF trimer with three C4 binders",
+            "recommended_for_simple_comparison": true
+          },
+          {
+            "id": "9DJW",
+            "binder": "VNAR-D1",
+            "current_PDB_resolution_angstrom": 3.43,
+            "article_reported_resolution_angstrom": 3.43,
+            "assembly_1_protein_chains": 60,
+            "assembly_1_interpretation": "Large annotated assembly containing multiple complexes; do not label all 60 chains as one TNF trimer plus three binders",
+            "recommended_for_simple_comparison": false
+          }
+        ],
+        "source_data_provided_with_article": true,
+        "metadata_http_status_verified": 200,
+        "verified_on": "2026-10-13",
+        "files_downloaded_during_literature_review": false
+      },
+      "evidence_limits": [
+        "Novel VNAR binders are not the prescribed adalimumab drug",
+        "Molecular/cell assays do not establish safety or superiority in human RA treatment",
+        "Some historical affinity/potency and animal comparisons are cited from prior work; do not present them as a new human trial",
+        "Membrane-TNF visualisation includes a predicted model; the newly solved structures are soluble-TNF complexes",
+        "9BN7 resolution differs between the article text and current PDB metadata; both values are retained",
+        "9DJW full assembly is not a single simple six-chain complex"
+      ],
+      "verification": {
+        "bibliographic_metadata_checked": true,
+        "primary_full_methods_checked": true,
+        "PDB_entry_and_assembly_metadata_checked": true,
+        "scientific_results_independently_reproduced": false,
+        "evidence_pointers": [
+          "Publisher-deposited Crossref online date and PubMed/Europe PMC record",
+          "Results: crystal structures and adalimumab epitope comparison, Figure 2c",
+          "Functional validation: Figure 5 assays and adalimumab comparator in Figure 5d",
+          "Data availability: PDB deposits",
+          "RCSB core entry and assembly APIs for 9BN7 and 9DJW"
+        ]
+      },
+      "primary_sources": [
+        "https://www.nature.com/articles/s41467-025-66967-3",
+        "https://pubmed.ncbi.nlm.nih.gov/41318641/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12783797/fullTextXML",
+        "https://api.crossref.org/works/10.1038/s41467-025-66967-3",
+        "https://www.rcsb.org/structure/9BN7",
+        "https://www.rcsb.org/structure/9DJW",
+        "https://data.rcsb.org/rest/v1/core/assembly/9BN7/1",
+        "https://data.rcsb.org/rest/v1/core/assembly/9DJW/1"
+      ],
+      "archive_reason_fa": "مکمل معتبر ساختاری برای مقایسهٔ محل اتصال TNF؛ با افزوده‌شدن پرسش ارتباط غیرمستقیم، Marguerie نقش محوری گرفت. رکورد و شواهد Ubah رد یا حذف نشده‌اند.",
+      "current_selection_role": "supplementary; not counted among the three central recent papers"
+    },
+    {
+      "id": "shi_2025_top2a_ra_ipf",
+      "title": "Exploring The Role of TOP2A in the Intersection of Pathogenic Mechanisms Between Rheumatoid Arthritis and Idiopathic Pulmonary Fibrosis Based on Bioinformatics",
+      "first_author": "Shoujie Shi",
+      "journal": "Journal of Inflammation Research",
+      "year": 2025,
+      "volume": "18",
+      "pages": "3449-3468",
+      "publication_date": "2025-03-11",
+      "doi": "10.2147/JIR.S497734",
+      "pmid": "40093950",
+      "pmcid": "PMC11910056",
+      "publication_status": "peer-reviewed journal article",
+      "study_design": "Reanalysis of public human disease/control expression cohorts with LASSO/SVM candidate selection, external transcriptomic validation, cell-line perturbation and mouse-model expression experiments",
+      "cohort": {
+        "disease": [
+          "rheumatoid arthritis",
+          "idiopathic pulmonary fibrosis"
+        ],
+        "analysis_subset_counts_verified": false,
+        "source_dataset_counts_are_not_analysis_counts": true,
+        "discovery_sources": [
+          {
+            "accession": "GSE55235",
+            "tissue": "human synovium",
+            "series_total_samples": 30,
+            "series_groups": {
+              "rheumatoid_arthritis": 10,
+              "osteoarthritis": 10,
+              "healthy_control": 10
+            },
+            "paper_selected_subset_requires_reconstruction": true
+          },
+          {
+            "accession": "GSE213001",
+            "tissue": "human lung",
+            "series_total_samples": 139,
+            "series_total_donors": 46,
+            "series_donor_groups": {
+              "IPF": 20,
+              "control": 14,
+              "non_IPF_ILD": 9,
+              "CLAD": 3
+            },
+            "metadata_note": "Overall_design describes 43 donors; sample-level metadata adds 3 CLAD donors. The 139 libraries represent 46 donors in the full series.",
+            "series_sample_groups_verified": {
+              "IPF": 62,
+              "non_diseased_control": 41
+            },
+            "multiple_lung_regions_per_donor": true,
+            "paper_selected_subset_requires_reconstruction": true
+          }
+        ],
+        "external_validation_sources": [
+          {
+            "accession": "GSE89408",
+            "tissue": "human synovium",
+            "series_total_samples": 218,
+            "series_groups": {
+              "RA_early": 57,
+              "RA_established": 95,
+              "normal": 28,
+              "osteoarthritis": 22,
+              "arthralgia": 10,
+              "undifferentiated_arthritis": 6
+            },
+            "one_biopsy_per_subject": true,
+            "paper_selected_subset_requires_reconstruction": true
+          },
+          {
+            "accession": "GSE92592",
+            "tissue": "human lung",
+            "series_total_samples": 39,
+            "series_groups": {
+              "IPF": 20,
+              "control": 19
+            }
+          }
+        ]
+      },
+      "experimental_models": {
+        "RA_like_in_vitro_model": {
+          "cell_line": "SW982",
+          "biological_origin": "human synovial sarcoma",
+          "stimulation": "TNF-alpha",
+          "primary_patient_RA_fibroblasts": false
+        },
+        "IPF_like_in_vitro_model": {
+          "cell_line": "A549",
+          "biological_origin": "human non-small-cell lung cancer",
+          "stimulation": "TGF-beta1",
+          "primary_patient_IPF_cells": false
+        },
+        "mouse_models": [
+          "collagen-induced arthritis",
+          "bleomycin-induced pulmonary fibrosis"
+        ],
+        "reported_RA_mouse_groups": {
+          "RA": 5,
+          "control": 5
+        },
+        "compound": "PluriSIn #2, used by authors to inhibit TOP2A",
+        "adalimumab_tested": false,
+        "rescue_experiment_performed": false
+      },
+      "endpoints": [
+        "Differential gene expression and disease/control ROC discrimination",
+        "TOP2A mRNA and protein expression",
+        "Inflammatory/fibrogenic markers, migration/invasion and phospho-SMAD2/3 after cell-line perturbation",
+        "Mouse tissue TOP2A immunohistochemistry"
+      ],
+      "findings": {
+        "candidate_gene_count": 7,
+        "candidate_genes": [
+          "CXCL13",
+          "TOP2A",
+          "MMP13",
+          "MMP1",
+          "LY9",
+          "TENM4",
+          "SEMA3E"
+        ],
+        "model_validation": "External GEO expression/ROC validation and qRT-PCR, Western blot and mouse-model expression support; not a validated drug-response model",
+        "interpretation": "Supports exploratory TOP2A-associated inflammatory/fibrogenic hypotheses. Does not establish direct TNF-TOP2A binding, adalimumab targeting TOP2A, or a clinically validated TOP2A test."
+      },
+      "data_availability": {
+        "public_individual_level_dataset": "public expression and de-identified sample metadata in GEO; selected analysis subsets must be reconstructed",
+        "accessions": [
+          "GSE55235",
+          "GSE213001",
+          "GSE89408",
+          "GSE92592"
+        ],
+        "access": "Public GEO series records and sample metadata",
+        "series_and_sample_metadata_verified_on": "2026-10-13",
+        "series_metadata_http_status": 200,
+        "full_expression_reanalysis_completed": false,
+        "publisher_figures_or_full_text_committed": false
+      },
+      "evidence_limits": [
+        "Cancer-derived SW982 and A549 cell lines limit disease-model generalisation",
+        "Proliferation/cell-cycle and cell-composition effects are alternative explanations requiring explicit testing in this project",
+        "Authors note lack of rescue experiments and incomplete mechanistic confirmation",
+        "Diagnostic disease/control ROC discrimination is not prospective disease progression or adalimumab-response prediction",
+        "GSE213001 has repeated lung-region samples; donor-level dependence must be handled",
+        "No adalimumab intervention or direct TNF-TOP2A binding measurement was performed"
+      ],
+      "primary_sources": [
+        "https://doi.org/10.2147/JIR.S497734",
+        "https://pubmed.ncbi.nlm.nih.gov/40093950/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11910056/fullTextXML",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE55235",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE213001",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE89408",
+        "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE92592"
+      ],
+      "selection_status": "supplementary or archived; not part of current course core",
+      "archive_reason_fa": "مکمل مرتبط برای سرنخ TNF/TOP2A در RA؛ رده‌های سرطانی و نبود آزمایش آدالیموماب مانع ادعای پیوند کامل‌اند. استفادهٔ انتقادی، بدون اجرای برنامهٔ بزرگ ژنی.",
+      "current_selection_role": "supplementary; not counted among the three central recent papers",
+      "verification": {
+        "scientific_results_independently_reproduced": false
+      }
+    },
+    {
+      "id": "bhamidipati_2026_spatial_ra",
+      "title": "Spatial patterning of fibroblast TGFβ signaling underlies treatment resistance in rheumatoid arthritis",
+      "first_author": "Kartik Bhamidipati",
+      "journal": "Nature Immunology",
+      "year": 2026,
+      "volume": "27",
+      "issue": "3",
+      "pages": "556-571",
+      "publication_date": "2026-01-15",
+      "doi": "10.1038/s41590-025-02386-2",
+      "pmid": "41540265",
+      "pmcid": "PMC12956583",
+      "publication_status": "peer-reviewed journal article",
+      "prior_preprint": {
+        "doi": "10.1101/2025.03.14.642821",
+        "pmid": "40166167",
+        "pmcid": "PMC11956964",
+        "publication_date": "2025-03-17",
+        "peer_reviewed": false,
+        "not_used_as_final_version": true,
+        "note": "Final article changes remission definition and categorisation. Use 2026 final text for cohort labels; do not infer publication year from the DOI."
+      },
+      "study_design": "Paired early-RA synovial-biopsy spatial-transcriptomic investigation with separate external expression cohorts, co-culture perturbations and RA patient-derived organoids",
+      "cohort": {
+        "disease": "early rheumatoid arthritis",
+        "study_protocol": "396.10",
+        "paired_biopsy_patients": 17,
+        "sampling_months": [
+          0,
+          6
+        ],
+        "same_joint_biopsied_before_and_after": true,
+        "treatment_groups": {
+          "adalimumab": 6,
+          "triple_DMARD": 11
+        },
+        "final_article_remission_groups": {
+          "remission": 10,
+          "non_remission": 5,
+          "borderline": 2
+        },
+        "figure_8b_niche_comparison_patients": 16,
+        "additional_custom_panel_tissues": 4,
+        "external_PEAC_cohort_n": 69,
+        "external_PEAC_accession": "E-MTAB-6141",
+        "denominator_note": "Different experiments/figures have distinct denominators; 17 patients are not 17 adalimumab patients, and cells or niches are not independent patient replicates."
+      },
+      "endpoints": [
+        "Final-article six-month remission: DAS28-ESR <2.6 AND DAS28-CRP <2.4; borderline meets only one condition",
+        "Tissue niche composition, fibrogenic COMP/TGF-beta/Notch signatures and spatial localisation",
+        "Gene/protein response to Notch and TGF-beta pathway perturbation in co-cultures and patient-derived organoids"
+      ],
+      "findings": {
+        "interpretation": "Fibrogenic tissue programmes are associated with lack of remission despite immune depletion; a mechanistic context for investigating anti-TNF response, not demonstration of a TOP2A-adalimumab mechanism.",
+        "TOP2A_mechanism_demonstrated": false,
+        "drug_specific_clinical_predictor_validated": false
+      },
+      "data_availability": {
+        "public_individual_level_dataset": "public spatial transcriptomic and selected clinical/source data; no large dataset files downloaded during this review",
+        "generated_data": [
+          {
+            "role": "RA synovial pretreatment Xenium",
+            "doi": "10.5281/zenodo.15058262",
+            "http_status_verified": 200,
+            "record_total_bytes": 29352850227,
+            "record_files": 18
+          },
+          {
+            "role": "RA synovial posttreatment Xenium",
+            "doi": "10.5281/zenodo.15058715",
+            "http_status_verified": 200,
+            "record_total_bytes": 25080982008,
+            "record_files": 18
+          },
+          {
+            "role": "Custom fibrogenesis panel and AMP Olink matrix",
+            "doi": "10.5281/zenodo.15059437",
+            "http_status_verified": 200,
+            "record_total_bytes": 5082611924,
+            "record_files": 5
+          },
+          {
+            "role": "2D co-culture Xenium",
+            "doi": "10.5281/zenodo.15064564",
+            "http_status_verified": null
+          },
+          {
+            "role": "RA-ILD lung/synovium, patient-derived organoids, 3D co-cultures and 396.10 Olink",
+            "doi": "10.5281/zenodo.16995699",
+            "http_status_verified": null
+          }
+        ],
+        "external_sources": [
+          "GSE195452",
+          "GSE136831",
+          "syn52297840",
+          "SDY1599",
+          "E-MTAB-6141",
+          "GSE127388",
+          "ENCSR596FEL"
+        ],
+        "repository_metadata_verified_on": "2026-10-13",
+        "heavy_data_downloads_required_for_initial_project": false,
+        "full_data_reanalysis_completed": false
+      },
+      "evidence_limits": [
+        "Small biopsy cohort and only six adalimumab-treated patients",
+        "Mechanistic perturbation models do not establish clinical efficacy of an additional treatment",
+        "Direct TOP2A biology or binding to TNF/adalimumab is not established by this study",
+        "Analyses must account for participant-level replication and distinct figure denominators",
+        "Final peer-reviewed article is from 2026; the 2025 PMC record supplied initially is a preprint"
+      ],
+      "primary_sources": [
+        "https://www.nature.com/articles/s41590-025-02386-2",
+        "https://pubmed.ncbi.nlm.nih.gov/41540265/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12956583/fullTextXML",
+        "https://zenodo.org/api/records/15058262",
+        "https://zenodo.org/api/records/15058715",
+        "https://zenodo.org/api/records/15059437"
+      ],
+      "selection_status": "supplementary or archived; not part of current course core",
+      "archive_reason_fa": "مکمل بافت/پاسخ RA برای آینده؛ فضایی‌بودن داده، ساختار اتمی پروتئین نیست و نقش TOP2A را اثبات نمی‌کند. تحلیل بزرگ این فاز لازم نیست.",
+      "current_selection_role": "supplementary; not counted among the three central recent papers",
+      "verification": {
+        "scientific_results_independently_reproduced": false
+      }
+    },
+    {
+      "id": "yap_2025_ra_transcriptomics",
+      "title": "Identifying Predictive Biomarkers of Response in Patients With Rheumatoid Arthritis Treated With Adalimumab Using Machine Learning Analysis of Whole-Blood Transcriptomics Data",
+      "first_author": "Chuan Fu Yap",
+      "journal": "Arthritis & Rheumatology",
+      "year": 2025,
+      "volume": "77",
+      "issue": "12",
+      "pages": "1663-1672",
+      "doi": "10.1002/art.43255",
+      "pmid": "40415615",
+      "pmcid": "PMC12750119",
+      "publication_dates": {
+        "publisher_first_published": "2025-05-26",
+        "pubmed_article_date": "2025-08-04",
+        "print_issue": "2025-12",
+        "note": "Publisher and PubMed/PMC online-date fields differ; both establish publication year 2025."
+      },
+      "study_design": "Prospective observational BRAGGSS cohort; paired bulk whole-blood RNA-seq and exploratory classifier/network analyses",
+      "cohort": {
+        "disease": "rheumatoid arthritis",
+        "country": "United Kingdom",
+        "enrolled": 100,
+        "analysed_as_reported_in_patient_table": 97,
+        "responders": 70,
+        "nonresponders": 27,
+        "anti_drug_antibody_subgroup": 80,
+        "sampling_months": [
+          0,
+          3
+        ]
+      },
+      "endpoints": [
+        "EULAR response at month 6 based on DAS28-CRP; month-3 score substituted for four patients lacking month-6 score",
+        "Anti-adalimumab antibody detection over available month-3, month-6 and month-12 samples"
+      ],
+      "findings": {
+        "baseline_classifier_auc": 0.86,
+        "reported_auc_variability": 0.13,
+        "validation": "nested cross-validation",
+        "mzb1_anti_drug_antibody_hazard_ratio": 1.58,
+        "mzb1_hazard_ratio_ci95": [
+          1.14,
+          2.17
+        ],
+        "interpretation": "MZB1 is an exploratory transcriptomic candidate associated with immunogenicity, not a clinically validated predictive test."
+      },
+      "data_availability": {
+        "public_individual_level_dataset": false,
+        "access": "Data and model objects available upon researcher request under University of Manchester governance",
+        "accession": null,
+        "access_requested": false
+      },
+      "evidence_limits": [
+        "Small and imbalanced cohort; independent replication required",
+        "Association does not establish causal control of drug response",
+        "Does not measure TNF-Fab structure or establish lupus treatment efficacy"
+      ],
+      "primary_sources": [
+        "https://acrjournals.onlinelibrary.wiley.com/doi/10.1002/art.43255",
+        "https://pubmed.ncbi.nlm.nih.gov/40415615/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12750119/fullTextXML"
+      ],
+      "selection_status": "supplementary or archived; not part of current course core",
+      "archive_reason_fa": "مکمل آیندهٔ RNA و نشانگرهای پاسخ آدالیموماب در RA؛ درس توالی مرجع به معنی بازاجرای این تحلیل یا اعتبار بالینی پیش‌بین نیست.",
+      "current_selection_role": "supplementary; not counted among the three central recent papers",
+      "verification": {
+        "scientific_results_independently_reproduced": false
+      }
+    },
+    {
+      "id": "rider_2026_psort",
+      "title": "Transcriptomic profiling and machine learning uncover gene signatures of psoriasis endotypes and disease severity",
+      "first_author": "Ashley Rider",
+      "journal": "Communications Medicine",
+      "year": 2026,
+      "volume": "6",
+      "issue": "1",
+      "article_number": "65",
+      "publication_date": "2026-01-21",
+      "doi": "10.1038/s43856-025-01325-4",
+      "pmid": "41565778",
+      "pmcid": "PMC12852803",
+      "study_design": "Prospective observational PSORT discovery and replication cohorts during routine adalimumab or ustekinumab treatment",
+      "cohort": {
+        "disease": "moderate-to-severe chronic plaque psoriasis",
+        "country": "United Kingdom",
+        "centres": 6,
+        "recruitment_years": [
+          2015,
+          2018
+        ],
+        "participants": 146,
+        "discovery_participants": 89,
+        "replication_participants": 57,
+        "repeated_skin_and_blood_samples": 718,
+        "study_visits_weeks": [
+          0,
+          1,
+          4,
+          12
+        ],
+        "sample_count_is_not_participant_count": true
+      },
+      "endpoints": [
+        "PASI disease severity",
+        "Associations of transcriptomic modules/factors with BMI, HLA and treatment exposure"
+      ],
+      "findings": {
+        "methods": [
+          "WGCNA",
+          "ICA",
+          "Gaussian-process regression"
+        ],
+        "lesional_skin_severity_signature_gene_count": 9,
+        "interpretation": "Severity-associated transcriptomic signatures; not proof of drug-specific prospective response prediction or causal treatment superiority."
+      },
+      "data_availability": {
+        "public_individual_level_dataset": "limited processed expression and phenotype data",
+        "accession": "E-MTAB-14509",
+        "repository": "BioStudies ArrayExpress",
+        "repository_release_date": "2025-11-19",
+        "public_data": [
+          "raw and adjusted gene-count matrices",
+          "PASI",
+          "BMI"
+        ],
+        "restricted_data": [
+          "raw sequencing reads",
+          "detailed clinical and identifiable data"
+        ],
+        "repository_record_http_status_verified": 200,
+        "repository_record_verified_on": "2026-10-13",
+        "repository_api": "https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MTAB-14509",
+        "url": "https://www.ebi.ac.uk/biostudies/arrayexpress/studies/E-MTAB-14509",
+        "author_code_url": "https://github.com/C4TB/PSORT",
+        "author_code_archive_doi": "10.5281/zenodo.15847636",
+        "raw_patient_reads_downloaded": false
+      },
+      "evidence_limits": [
+        "Routine treatment allocation was not randomised",
+        "Repeated samples require patient-level train/test grouping",
+        "Current disease-severity prediction differs from prospective treatment-response prediction",
+        "Cannot join these individuals to structural measurements or the independent RA cohorts"
+      ],
+      "primary_sources": [
+        "https://www.nature.com/articles/s43856-025-01325-4",
+        "https://pubmed.ncbi.nlm.nih.gov/41565778/",
+        "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12852803/fullTextXML",
+        "https://www.ebi.ac.uk/biostudies/api/v1/studies/E-MTAB-14509"
+      ],
+      "selection_status": "supplementary or archived; not part of current course core",
+      "archive_reason_fa": "مکمل حفظ‌شده برای پسوریازیس؛ زمینهٔ اصلی سؤال فعلی RA است و دادهٔ بیماری/داروی متفاوت با آن ادغام نمی‌شود.",
+      "current_selection_role": "supplementary; not counted among the three central recent papers",
+      "verification": {
+        "scientific_results_independently_reproduced": false
+      }
+    }
+  ],
+  "current_project_scope_fa": "درس‌نامهٔ سی جلسه و بازتحلیل هندسی TNF–Fab با مقایسهٔ جهش و کنترل سطح؛ RA و RNA-seq مسیر مکمل با طرح و شواهد جدا؛ TOP2A پیوست اختیاری است.",
+  "selection_criteria": [
+    "Explicit role in the staged ADA-TNF-TOP2A/RA question rather than keyword overlap",
+    "Experimental coordinates or 3D modelling distinguished from gene abundance and pathway schematics",
+    "Computational, perturbation, association and clinical endpoints kept separate",
+    "Primary passages, final publication dates and data-label access checked",
+    "Teachable staged course output; no required long MD, CRISPR, large RNA-seq or clinical prediction run",
+    "Contrary/context-specific results and null outcomes allowed; unmeasured drug-to-TOP2A edge remains unproven"
+  ],
+  "scientific_results_independently_reproduced": false,
+  "selection_audit_path": "docs/literature-selection-audit.fa.md",
+  "central_paper_ids": [
+    "hu_2013_tnf_adalimumab",
+    "bianchi_2026_antibody_dynamics",
+    "gehin_2024_admyra",
+    "tao_2021_ra_rnaseq"
+  ],
+  "additional_foundations_not_counted_in_recent_three": [
+    {
+      "id": "youn_2002_ra_synoviocytes",
+      "title": "Regulation of TNF-alpha-mediated hyperplasia through TNF receptors, TRAFs, and NF-kappaB in synoviocytes obtained from patients with rheumatoid arthritis",
+      "first_author": "Jeehee Youn",
+      "year": 2002,
+      "journal": "Immunology Letters",
+      "doi": "10.1016/S0165-2478(02)00079-2",
+      "pmid": "12067756",
+      "role_fa": "حلقهٔ TNF/تکثیر در سلول سینوویال بیمار RA؛ زمینهٔ وابسته به سلول",
+      "support": "TNF induced proliferation in RA-derived FLS, with NF-kappaB-pathway intervention suppressing that response",
+      "limits": [
+        "No ADA or TOP2A endpoint",
+        "Cultured cells; not a universal effect across tissues",
+        "Bibliography and original abstract checked; full methods not obtained in this review"
+      ],
+      "primary_sources": [
+        "https://pubmed.ncbi.nlm.nih.gov/12067756/"
+      ],
+      "scientific_results_independently_reproduced": false
+    },
+    {
+      "id": "wendorff_2012_human_top2a_dna",
+      "title": "The Structure of DNA-Bound Human Topoisomerase II Alpha: Conformational Mechanisms for Coordinating Inter-Subunit Interactions with DNA Cleavage",
+      "first_author": "Timothy J. Wendorff",
+      "year": 2012,
+      "journal": "Journal of Molecular Biology",
+      "doi": "10.1016/j.jmb.2012.07.014",
+      "pmid": "22841979",
+      "pdb_id": "4FM9",
+      "resolution_angstrom_current_rcsb": 2.901,
+      "role_fa": "ساختار تجربی هستهٔ برش DNA آنزیم TOP2A انسانی برای مقایسهٔ آموزشی",
+      "support": "Human TOP2A DNA-cleavage core with synthetic DNA, not a TNF or adalimumab complex",
+      "limits": [
+        "763-residue cleavage-core construct; not full-length TOP2A",
+        "Synthetic DNA and asymmetric-unit coordinates; dimer display requires verified assembly",
+        "No RNA, drug-to-TOP2A endpoint or clinical anticancer result"
+      ],
+      "primary_sources": [
+        "https://www.rcsb.org/structure/4FM9",
+        "https://pubmed.ncbi.nlm.nih.gov/22841979/",
+        "https://data.rcsb.org/rest/v1/core/entry/4FM9"
+      ],
+      "scientific_results_independently_reproduced": false
+    }
+  ],
+  "claim_evidence_map": [
+    {
+      "claim": "Direct ADA-TNF binding and TNF-receptor interference",
+      "status": "supported in molecular/regulatory sources",
+      "source_ids": [
+        "hu_2013_tnf_adalimumab"
+      ],
+      "limitations": "Local deposited partial interface is not full IgG, a completed trimer or individual clinical efficacy"
+    },
+    {
+      "claim": "Full-IgG antigen-associated conformational effects",
+      "status": "computational prediction",
+      "source_ids": [
+        "bianchi_2026_antibody_dynamics"
+      ],
+      "limitations": "No independently verified functional Fc or clinical endpoint"
+    },
+    {
+      "claim": "TNF-to-RA-FLS proliferation through a context-dependent pathway",
+      "status": "experimental support in cultured patient-derived cells",
+      "source_ids": [
+        "youn_2002_ra_synoviocytes"
+      ],
+      "limitations": "Neither ADA nor TOP2A measured; cannot universalise the direction"
+    },
+    {
+      "claim": "ADA increases SIRPG in activated healthy-donor T cells",
+      "status": "experimental support in the reported pharmacological system",
+      "source_ids": [
+        "marguerie_2025_sirpg_tcells"
+      ],
+      "limitations": "Not the same experiment as SIRPG knockout; not clinical RA response"
+    },
+    {
+      "claim": "SIRPG knockout lowers TOP2A RNA and proliferation",
+      "status": "experimental support in a separate perturbation system",
+      "source_ids": [
+        "marguerie_2025_sirpg_tcells"
+      ],
+      "limitations": "RNA abundance after knockout, not direct molecular binding or ADA treatment effect"
+    },
+    {
+      "claim": "ADA changes TOP2A in RA through SIRPG or another mediator",
+      "status": "unproven testable indirect hypothesis",
+      "source_ids": [
+        "marguerie_2025_sirpg_tcells",
+        "shi_2025_top2a_ra_ipf",
+        "youn_2002_ra_synoviocytes"
+      ],
+      "limitations": "Drug-to-TOP2A and mediation in one specified system are missing; increase/decrease/no change all allowed"
+    },
+    {
+      "claim": "Adalimumab concentration and CRP/activity in RA",
+      "status": "post hoc clinical association",
+      "source_ids": [
+        "gehin_2024_admyra"
+      ],
+      "limitations": "Not a TOP2A mechanism or randomised dosing-effect study"
+    },
+    {
+      "claim": "TOP2A binds/works with DNA",
+      "status": "experimental structural foundation and established function",
+      "source_ids": [
+        "wendorff_2012_human_top2a_dna"
+      ],
+      "limitations": "Fragment/synthetic DNA; unrelated to proof of ADA anticancer action"
+    },
+    {
+      "claim": "ADA directly inhibits TOP2A or treats cancer through TOP2A",
+      "status": "not supported by reviewed evidence",
+      "source_ids": [],
+      "limitations": "Do not draw a solid target-binding or treatment-efficacy arrow"
+    },
+    {
+      "claim": "TOP2A descriptive CPM after adalimumab in four paired MLR donors",
+      "status": "executed descriptive pilot; not inferential differential expression or enzyme inhibition",
+      "source_ids": [
+        "veerasubramanian_2026_mlr"
+      ],
+      "limitations": "CPM only; no TMM, paired inference, protein/activity assay or clinical extrapolation"
+    }
+  ],
+  "related_documents": {
+    "course_guide": "docs/course-guide.fa.md",
+    "research_questions": "docs/research-questions.fa.md",
+    "connection_evidence": "docs/connection-evidence.fa.md",
+    "literature_review": "docs/literature-review.fa.md",
+    "selection_audit": "docs/literature-selection-audit.fa.md",
+    "manuscript_outline": "docs/manuscript-outline.fa.md",
+    "claim_audit": "docs/scientific-claim-audit.fa.md",
+    "top2a_feasibility": "docs/top2a-inhibition-feasibility.fa.md",
+    "rna_pilot": "docs/top2a-count-inspection.fa.md"
+  },
+  "selection_history_note": "Legacy field names containing recent_three are retained for backwards compatibility and source history, not as the current source-count rule."
+}

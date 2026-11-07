@@ -1,0 +1,847 @@
+{
+  "schema_version": 1,
+  "title": "سرفصل آموزشی بیوانفورماتیک ساختاری",
+  "question": "توالی، ساختار و عملکرد مولکول‌های زیستی چگونه به هم مرتبط‌اند؟",
+  "syllabus": "data/metadata/course-syllabus.json",
+  "progress_note": "وضعیت مطالعه گزارش خود خواننده است؛ آزمون تسلط یا گواهی یادگیری نیست.",
+  "sessions": [
+    {
+      "session": 1,
+      "block": "intro",
+      "title": "آشنایی با بیوانفورماتیک ساختاری",
+      "question": "دادهٔ سه‌بعدی چه چیزی به شناخت بیماری اضافه می‌کند؟",
+      "path": "docs/course/session-01.fa.md",
+      "prerequisites": [],
+      "check": {
+        "question": "آیا داشتن توالی یک پروتئین یعنی حرکت و عملکرد آن را هم اندازه گرفته‌ایم؟",
+        "answer": "خیر. توالی، ترتیب واحدها را می‌دهد؛ ساختار، حرکت و عملکرد به داده یا مدل و ارزیابیِ متناسب نیاز دارند."
+      },
+      "exercise_path": "docs/exercises/topic-01.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-01.fa.md",
+      "research_path": "docs/research-notes/topic-01.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-01.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "rcsb3wd5",
+        "hu",
+        "tao",
+        "ra",
+        "biochem"
+      ],
+      "laboratory": "sequence"
+    },
+    {
+      "session": 2,
+      "block": "biomolecules",
+      "title": "مونومر، پلیمر و شیمی اسیدآمینه",
+      "question": "چرا دو اسیدآمینه رفتار یکسانی روی سطح ندارند؟",
+      "path": "docs/course/session-02.fa.md",
+      "prerequisites": [
+        1
+      ],
+      "check": {
+        "question": "آیا هر دو اسیدآمینهٔ قطبی حتماً دارای بار خالص یکسان‌اند؟",
+        "answer": "خیر. قطبیت به توزیع بار مربوط است؛ بار خالص و حالت پروتون‌گیری را جدا بررسی می‌کنیم."
+      },
+      "exercise_path": "docs/exercises/topic-02.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-02.fa.md",
+      "research_path": "docs/research-notes/topic-02.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-02.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio"
+      ],
+      "research_source_ids": [
+        "biochem",
+        "hu"
+      ],
+      "laboratory": "sequence"
+    },
+    {
+      "session": 3,
+      "block": "biomolecules",
+      "title": "پیوند پپتیدی و سطوح ساختار پروتئین",
+      "question": "توالی چگونه به زنجیره و مجموعهٔ چندزنجیره‌ای مربوط است؟",
+      "path": "docs/course/session-03.fa.md",
+      "prerequisites": [
+        2
+      ],
+      "check": {
+        "question": "آیا شکل سه‌بعدی یک زنجیره همان ساختار چهارم است؟",
+        "answer": "خیر؛ شکل یک زنجیره ساختار سوم است. ساختار چهارم دربارهٔ آرایش چند زیرواحد است."
+      },
+      "exercise_path": "docs/exercises/topic-03.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-03.fa.md",
+      "research_path": "docs/research-notes/topic-03.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-03.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "biochem",
+        "rcsb3wd5"
+      ],
+      "laboratory": "sequence"
+    },
+    {
+      "session": 4,
+      "block": "biomolecules",
+      "title": "ساختار دوم، دمین و طبقه‌بندی تاخوردگی",
+      "question": "نمای نواری چگونه باید تفسیر شود؟",
+      "path": "docs/course/session-04.fa.md",
+      "prerequisites": [
+        3
+      ],
+      "check": {
+        "question": "دمین، موتیف و ساختار دوم مترادف‌اند؟",
+        "answer": "خیر. ساختار دوم محلی است؛ موتیف الگویی از عناصر و دمین یک بخش ساختاری بزرگ‌تر و نسبتاً متمایز است."
+      },
+      "exercise_path": "docs/exercises/topic-04.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-04.fa.md",
+      "research_path": "docs/research-notes/topic-04.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-04.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "pdb",
+        "cath"
+      ],
+      "research_source_ids": [
+        "dssp",
+        "cath",
+        "rcsb3wd5"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 5,
+      "block": "biomolecules",
+      "title": "ساختار و شیمی DNA و RNA",
+      "question": "شیمی RNA با جدول RNA-seq چه تفاوتی دارد؟",
+      "path": "docs/course/session-05.fa.md",
+      "prerequisites": [
+        4
+      ],
+      "check": {
+        "question": "آیا تک‌رشته‌ای‌بودن RNA یعنی فاقد شکل سه‌بعدی است؟",
+        "answer": "خیر. RNA می‌تواند درون خود جفت‌باز و برهم‌کنش ایجاد کند و ساختار سه‌بعدی بسازد."
+      },
+      "exercise_path": "docs/exercises/topic-05.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-05.fa.md",
+      "research_path": "docs/research-notes/topic-05.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-05.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "biochem",
+        "refseq",
+        "genetic-code"
+      ],
+      "laboratory": "sequence"
+    },
+    {
+      "session": 6,
+      "block": "viewing",
+      "title": "مشاهدهٔ مولکول و انتخاب اتم در VMD",
+      "question": "چه چیزی را واقعاً انتخاب کرده‌ایم؟",
+      "path": "docs/course/session-06.fa.md",
+      "prerequisites": [
+        5
+      ],
+      "check": {
+        "question": "چرا باید انتخاب اتم را قبل از اندازه‌گیری ببینیم؟",
+        "answer": "برای اطمینان از اینکه زنجیره، مدل و نوع اتم درست‌اند؛ عدد درست از انتخاب نادرست، پاسخ سؤال مورد نظر نیست."
+      },
+      "exercise_path": "docs/exercises/topic-06.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-06.fa.md",
+      "research_path": "docs/research-notes/topic-06.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-06.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "vmd"
+      ],
+      "research_source_ids": [
+        "vmd",
+        "rcsb3wd5"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 7,
+      "block": "viewing",
+      "title": "Tcl و تحلیل قابل بازاجرا",
+      "question": "چگونه کار دستی را به دستور مستند تبدیل کنیم؟",
+      "path": "docs/course/session-07.fa.md",
+      "prerequisites": [
+        6
+      ],
+      "check": {
+        "question": "تفاوت `{...}` و `[...]` در این مثال چیست؟",
+        "answer": "آکولاد متن را گروه‌بندی می‌کند؛ براکت مربع فرمان را اجرا و خروجی آن را جایگزین می‌کند."
+      },
+      "exercise_path": "docs/exercises/topic-07.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-07.fa.md",
+      "research_path": "docs/research-notes/topic-07.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-07.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "tcl",
+        "vmd"
+      ],
+      "research_source_ids": [
+        "vmd"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 8,
+      "block": "viewing",
+      "title": "RMSD، هم‌ترازی و اتم‌های متناظر",
+      "question": "دو شکل را با چه تطابقی مقایسه می‌کنیم؟",
+      "path": "docs/course/session-08.fa.md",
+      "prerequisites": [
+        7
+      ],
+      "check": {
+        "question": "آیا RMSD کمتر همیشه به معنی مدل زیستی بهتر است؟",
+        "answer": "خیر. باید مرجع، نگاشت، ناحیهٔ انتخاب‌شده و نوع سؤال معلوم باشد؛ شباهت به یک مرجع به‌تنهایی صحت همهٔ ویژگی‌ها را تضمین نمی‌کند."
+      },
+      "exercise_path": "docs/exercises/topic-08.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-08.fa.md",
+      "research_path": "docs/research-notes/topic-08.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-08.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "vmd",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "vmd",
+        "rcsb1tnf",
+        "local-geometry"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 9,
+      "block": "viewing",
+      "title": "شعاع دوران، سطح حلال و سطح رابط",
+      "question": "مساحت پوشیده را با کدام قرارداد گزارش می‌کنیم؟",
+      "path": "docs/course/session-09.fa.md",
+      "prerequisites": [
+        8
+      ],
+      "check": {
+        "question": "چرا دو گزارش سطح رابط ممکن است دقیقاً دو برابر هم باشند؟",
+        "answer": "ممکن است یکی مجموع کاهش سطح دو طرف و دیگری نصف آن را گزارش کرده باشد؛ ابتدا تعریف را کنترل می‌کنیم."
+      },
+      "exercise_path": "docs/exercises/topic-09.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-09.fa.md",
+      "research_path": "docs/research-notes/topic-09.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-09.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "pdb",
+        "vmd"
+      ],
+      "research_source_ids": [
+        "vmd",
+        "biopython",
+        "local-geometry",
+        "local-surface"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 10,
+      "block": "databases",
+      "title": "پایگاه‌های توالی: UniProt و RefSeq",
+      "question": "توالی سازه با توالی مرجع چگونه تطبیق داده می‌شود؟",
+      "path": "docs/course/session-10.fa.md",
+      "prerequisites": [
+        9
+      ],
+      "check": {
+        "question": "چرا نام ژن برای تعیین دقیق فایل ورودی کافی نیست؟",
+        "answer": "چون موجود زنده، ایزوفرم، نسخه و نوع مولکول باید مشخص باشند؛ accession و مشخصات توالی این ابهام‌ها را کم می‌کنند."
+      },
+      "exercise_path": "docs/exercises/topic-10.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-10.fa.md",
+      "research_path": "docs/research-notes/topic-10.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-10.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "uni",
+        "ref"
+      ],
+      "research_source_ids": [
+        "uniprot",
+        "refseq",
+        "rcsb3wd5"
+      ],
+      "laboratory": "sequence"
+    },
+    {
+      "session": 11,
+      "block": "databases",
+      "title": "بلورنگاری پرتو X و کیفیت مدل",
+      "question": "مختصات از چه شواهدی به دست آمده است؟",
+      "path": "docs/course/session-11.fa.md",
+      "prerequisites": [
+        10
+      ],
+      "check": {
+        "question": "آیا یک عدد تفکیک‌پذیری، کیفیت همهٔ اتم‌ها را یکسان تعیین می‌کند؟",
+        "answer": "خیر. کیفیت موضعی و گزارش اعتبارسنجی نیز باید بررسی شوند."
+      },
+      "exercise_path": "docs/exercises/topic-11.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-11.fa.md",
+      "research_path": "docs/research-notes/topic-11.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-11.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "pdb"
+      ],
+      "research_source_ids": [
+        "hu",
+        "rcsb3wd5"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 12,
+      "block": "databases",
+      "title": "فایل‌های PDB و mmCIF و مجموعهٔ زیستی",
+      "question": "واحد نامتقارن با اسمبلی زیستی چه فرق دارد؟",
+      "path": "docs/course/session-12.fa.md",
+      "prerequisites": [
+        11
+      ],
+      "check": {
+        "question": "آیا نمایش تمام همسایه‌های نزدیکِ بلوری، مجموعهٔ زیستی را قطعی مشخص می‌کند؟",
+        "answer": "خیر. تماس شبکهٔ بلور با برهم‌کنش زیستی فرق دارد و به ارزیابی و شواهد نیاز است."
+      },
+      "exercise_path": "docs/exercises/topic-12.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-12.fa.md",
+      "research_path": "docs/research-notes/topic-12.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-12.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "pdb"
+      ],
+      "research_source_ids": [
+        "pdb101",
+        "rcsb3wd5",
+        "local-geometry"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 13,
+      "block": "databases",
+      "title": "پایگاه‌های مولکول کوچک و ثبت ورودی",
+      "question": "کدام ماده در فایل، لیگاند زیستی یا جزء آزمایش است؟",
+      "path": "docs/course/session-13.fa.md",
+      "prerequisites": [
+        12
+      ],
+      "check": {
+        "question": "آیا داشتن یک شناسهٔ ترکیب یعنی فایل آن برای داکینگ آماده است؟",
+        "answer": "خیر. مختصات، حالت شیمیایی، هیدروژن‌ها، بارها و قالب ورودی هنوز باید کنترل شوند."
+      },
+      "exercise_path": "docs/exercises/topic-13.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-13.fa.md",
+      "research_path": "docs/research-notes/topic-13.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-13.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "chem",
+        "vina"
+      ],
+      "research_source_ids": [
+        "ccd",
+        "pubchem",
+        "geo-ra"
+      ]
+    },
+    {
+      "session": 14,
+      "block": "energy",
+      "title": "منظر انرژی و انرژی آزاد",
+      "question": "چرا تماس بیشتر الزاماً اتصال قوی‌تر نیست؟",
+      "path": "docs/course/session-14.fa.md",
+      "prerequisites": [
+        13
+      ],
+      "check": {
+        "question": "آیا پایین‌آمدن انرژی پتانسیل یک فریم، انرژی آزاد کل سامانه را تعیین می‌کند؟",
+        "answer": "خیر؛ انرژی آزاد به مجموعهٔ حالت‌ها، محیط و تعریف مدل وابسته است."
+      },
+      "exercise_path": "docs/exercises/topic-14.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-14.fa.md",
+      "research_path": "docs/research-notes/topic-14.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-14.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md",
+        "bio"
+      ],
+      "research_source_ids": [
+        "hu",
+        "biochem"
+      ],
+      "laboratory": "energy"
+    },
+    {
+      "session": 15,
+      "block": "energy",
+      "title": "تاخوردن پروتئین و پایداری",
+      "question": "جهش چه چیزهایی را هم‌زمان تغییر می‌دهد؟",
+      "path": "docs/course/session-15.fa.md",
+      "prerequisites": [
+        14
+      ],
+      "check": {
+        "question": "آیا پروتئین پایدارتر الزاماً سریع‌تر تا می‌خورد؟",
+        "answer": "خیر. پایداری تعادل را توصیف می‌کند و سرعت به مسیر و سدهای فرایند نیز وابسته است."
+      },
+      "exercise_path": "docs/exercises/topic-15.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-15.fa.md",
+      "research_path": "docs/research-notes/topic-15.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-15.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "md"
+      ],
+      "research_source_ids": [
+        "hu",
+        "local-geometry"
+      ],
+      "laboratory": "energy"
+    },
+    {
+      "session": 16,
+      "block": "energy",
+      "title": "بهینه‌سازی هندسی و جست‌وجوی ساختاری",
+      "question": "کمینهٔ محلی چه چیزی را تضمین می‌کند؟",
+      "path": "docs/course/session-16.fa.md",
+      "prerequisites": [
+        15
+      ],
+      "check": {
+        "question": "چرا کمینه‌سازی انرژی معادل MD نیست؟",
+        "answer": "چون معیار حرکت در کمینه‌سازی کاهش تابع هدف است؛ MD با معادلات حرکت و گام زمانی تعریف می‌شود."
+      },
+      "exercise_path": "docs/exercises/topic-16.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-16.fa.md",
+      "research_path": "docs/research-notes/topic-16.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-16.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md"
+      ],
+      "research_source_ids": [
+        "gromacs"
+      ],
+      "laboratory": "minimization"
+    },
+    {
+      "session": 17,
+      "block": "energy",
+      "title": "پروتئین‌های بی‌نظم ذاتی",
+      "question": "چرا بعضی ناحیه‌ها یک شکل یکتا ندارند؟",
+      "path": "docs/course/session-17.fa.md",
+      "prerequisites": [
+        16
+      ],
+      "check": {
+        "question": "آیا اعتماد پایینِ یک پیش‌بینی برای اثبات بی‌نظمی کافی است؟",
+        "answer": "خیر. این یک سرنخ است و باید با نوع مدل، شرایط و شواهد مستقل تفسیر شود."
+      },
+      "exercise_path": "docs/exercises/topic-17.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-17.fa.md",
+      "research_path": "docs/research-notes/topic-17.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-17.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "pdb",
+        "af",
+        "disprot"
+      ],
+      "research_source_ids": [
+        "disprot",
+        "rcsb3wd5"
+      ],
+      "laboratory": "energy"
+    },
+    {
+      "session": 18,
+      "block": "energy",
+      "title": "برهم‌کنش‌ها و سنجش اثر تغییر توالی",
+      "question": "کدام نتیجهٔ مقاله را واقعاً بازتحلیل کرده‌ایم؟",
+      "path": "docs/course/session-18.fa.md",
+      "prerequisites": [
+        17
+      ],
+      "check": {
+        "question": "چرا اثر یک جهش را نباید فقط به حذف یک تماس نسبت داد؟",
+        "answer": "چون تغییر توالی می‌تواند شکل، حلال‌پوشی، پایداری و چند برهم‌کنش را هم‌زمان تغییر دهد."
+      },
+      "exercise_path": "docs/exercises/topic-18.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-18.fa.md",
+      "research_path": "docs/research-notes/topic-18.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-18.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "bio",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "hu",
+        "local-mutations"
+      ],
+      "laboratory": "energy"
+    },
+    {
+      "session": 19,
+      "block": "md",
+      "title": "مکانیک مولکولی و میدان نیرو",
+      "question": "انرژی محاسباتی از چه اجزایی ساخته می‌شود؟",
+      "path": "docs/course/session-19.fa.md",
+      "prerequisites": [
+        18
+      ],
+      "check": {
+        "question": "آیا فایل مختصات به‌تنهایی برای اجرای یک MD معتبر کافی است؟",
+        "answer": "خیر. توپولوژی، پارامترها، شرایط مرزی، محیط و تنظیم‌های انتگرال‌گیری نیز لازم‌اند."
+      },
+      "exercise_path": "docs/exercises/topic-19.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-19.fa.md",
+      "research_path": "docs/research-notes/topic-19.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-19.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md"
+      ],
+      "research_source_ids": [
+        "gromacs"
+      ],
+      "laboratory": "energy"
+    },
+    {
+      "session": 20,
+      "block": "md",
+      "title": "آماده‌سازی، تعادل‌یابی و گام زمانی",
+      "question": "چگونه یک مسیر زمانی قابل تفسیر می‌شود؟",
+      "path": "docs/course/session-20.fa.md",
+      "prerequisites": [
+        19
+      ],
+      "check": {
+        "question": "آیا برابر بودن تعداد گام‌ها یعنی برابر بودن زمان شبیه‌سازی؟",
+        "answer": "خیر. زمان از تعداد گام ضربدر گام زمانی به دست می‌آید؛ واحد هر دو باید مشخص باشد."
+      },
+      "exercise_path": "docs/exercises/topic-20.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-20.fa.md",
+      "research_path": "docs/research-notes/topic-20.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-20.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md"
+      ],
+      "research_source_ids": [
+        "gromacs"
+      ],
+      "laboratory": "minimization"
+    },
+    {
+      "session": 21,
+      "block": "md",
+      "title": "MD و نمونه‌برداری از حالت‌های مولکولی",
+      "question": "شتاب‌دادن چه چیزی را تغییر می‌دهد؟",
+      "path": "docs/course/session-21.fa.md",
+      "prerequisites": [
+        20
+      ],
+      "check": {
+        "question": "چرا هزار قابِ نزدیک به هم الزاماً هزار مشاهدهٔ مستقل نیستند؟",
+        "answer": "چون قاب‌ها در طول زمان هم‌بستگی دارند و از یک مسیر مشترک آمده‌اند."
+      },
+      "exercise_path": "docs/exercises/topic-21.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-21.fa.md",
+      "research_path": "docs/research-notes/topic-21.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-21.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md"
+      ],
+      "research_source_ids": [
+        "bianchi",
+        "gromacs"
+      ],
+      "laboratory": "sampling"
+    },
+    {
+      "session": 22,
+      "block": "md",
+      "title": "طراحی و ارزیابی یک مطالعهٔ دینامیک مولکولی",
+      "question": "از یک مقالهٔ دینامیک چه چیزی به کار ما می‌آید؟",
+      "path": "docs/course/session-22.fa.md",
+      "prerequisites": [
+        21
+      ],
+      "check": {
+        "question": "برای ارزیابی یک فیلم MD چه چیزی بیش از خود فیلم لازم است؟",
+        "answer": "فایل ورودی، توپولوژی و پارامترها، شرایط اجرا، مسیر و تحلیل عددیِ متناسب با پرسش لازم‌اند."
+      },
+      "exercise_path": "docs/exercises/topic-22.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-22.fa.md",
+      "research_path": "docs/research-notes/topic-22.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-22.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "md"
+      ],
+      "research_source_ids": [
+        "bianchi"
+      ],
+      "laboratory": "sampling"
+    },
+    {
+      "session": 23,
+      "block": "prediction",
+      "title": "پیش‌بینی ساختار دوم و مدل‌سازی همولوژی",
+      "question": "قالب از کجا می‌آید و چقدر قابل اعتماد است؟",
+      "path": "docs/course/session-23.fa.md",
+      "prerequisites": [
+        22
+      ],
+      "check": {
+        "question": "چرا هم‌ترازی اشتباه می‌تواند مدل مقایسه‌ای را خراب کند؟",
+        "answer": "چون نگاشت باقی‌ماندهٔ هدف به الگو نادرست می‌شود و مختصات بر اساس همان نگاشت ساخته یا تفسیر می‌شوند."
+      },
+      "exercise_path": "docs/exercises/topic-23.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-23.fa.md",
+      "research_path": "docs/research-notes/topic-23.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-23.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "swiss",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "bianchi",
+        "swissmodel"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 24,
+      "block": "prediction",
+      "title": "Threading و تشخیص تاخوردگی",
+      "question": "وقتی شباهت توالی کم است چه می‌کنیم؟",
+      "path": "docs/course/session-24.fa.md",
+      "prerequisites": [
+        23
+      ],
+      "check": {
+        "question": "آیا تشخیص یک fold، کارکرد یکسان را ثابت می‌کند؟",
+        "answer": "خیر. کارکرد به جایگاه‌های اختصاصی، شریک‌ها و زمینهٔ زیستی هم وابسته است."
+      },
+      "exercise_path": "docs/exercises/topic-24.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-24.fa.md",
+      "research_path": "docs/research-notes/topic-24.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-24.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "swiss",
+        "pdb",
+        "fold"
+      ],
+      "research_source_ids": [
+        "prediction"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 25,
+      "block": "prediction",
+      "title": "پیش‌بینی ساختار با یادگیری ماشین و ارزیابی اعتماد",
+      "question": "confidence بالا چه چیزی را ثابت نمی‌کند؟",
+      "path": "docs/course/session-25.fa.md",
+      "prerequisites": [
+        24
+      ],
+      "check": {
+        "question": "آیا اعتماد بالای یک مدل به معنی تأیید فعالیت پروتئین است؟",
+        "answer": "خیر. اعتماد پیش‌بینی با سنجش عملکرد تفاوت دارد و به کمیت دیگری مربوط است."
+      },
+      "exercise_path": "docs/exercises/topic-25.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-25.fa.md",
+      "research_path": "docs/research-notes/topic-25.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-25.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "af",
+        "swiss",
+        "afdb"
+      ],
+      "research_source_ids": [
+        "alphafold"
+      ],
+      "laboratory": "geometry"
+    },
+    {
+      "session": 26,
+      "block": "docking",
+      "title": "داکینگ پروتئین و مولکول کوچک",
+      "question": "جعبه و شیمی ورودی چه چیزی را تعیین می‌کنند؟",
+      "path": "docs/course/session-26.fa.md",
+      "prerequisites": [
+        25
+      ],
+      "check": {
+        "question": "آیا بهترین امتیاز داکینگ به‌تنهایی برای معرفی یک دارو کافی است؟",
+        "answer": "خیر. آماده‌سازی، اعتبارسنجی و آزمایش‌های اتصال و عملکرد لازم‌اند."
+      },
+      "exercise_path": "docs/exercises/topic-26.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-26.fa.md",
+      "research_path": "docs/research-notes/topic-26.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-26.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "vina",
+        "chem"
+      ],
+      "research_source_ids": [
+        "vina",
+        "ccd",
+        "local-docking"
+      ]
+    },
+    {
+      "session": 27,
+      "block": "docking",
+      "title": "بازداکینگ و کنترل اعتبار روش",
+      "question": "آیا pose خوب کل روش را معتبر می‌کند؟",
+      "path": "docs/course/session-27.fa.md",
+      "prerequisites": [
+        26
+      ],
+      "check": {
+        "question": "چرا وجود یک pose نزدیک به مرجع برای موفقیت کامل کافی نیست؟",
+        "answer": "چون قابلیت رتبه‌بندی و انتخاب آن، کیفیت آماده‌سازی و تعمیم به نمونه‌های دیگر نیز باید ارزیابی شود."
+      },
+      "exercise_path": "docs/exercises/topic-27.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-27.fa.md",
+      "research_path": "docs/research-notes/topic-27.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-27.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "vina",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "vina",
+        "local-docking"
+      ]
+    },
+    {
+      "session": 28,
+      "block": "docking",
+      "title": "داکینگ پروتئین–پروتئین و انعطاف شرکا",
+      "question": "پیش از طراحی روی TNF چه تصمیم‌هایی لازم است؟",
+      "path": "docs/course/session-28.fa.md",
+      "prerequisites": [
+        27
+      ],
+      "check": {
+        "question": "چرا یک محدودیت آزمایشگاهی نمی‌تواند هم راهنمای جست‌وجو و هم شاهد کاملاً مستقل همان پیش‌بینی باشد؟",
+        "answer": "چون مدل از آن اطلاعات استفاده کرده است؛ برای ارزیابی مستقل به دادهٔ دیگری نیاز داریم."
+      },
+      "exercise_path": "docs/exercises/topic-28.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-28.fa.md",
+      "research_path": "docs/research-notes/topic-28.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-28.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "pdb",
+        "haddock"
+      ],
+      "research_source_ids": [
+        "capri",
+        "hu",
+        "local-geometry"
+      ]
+    },
+    {
+      "session": 29,
+      "block": "networks",
+      "title": "شبکهٔ تماس باقی‌مانده‌های اسیدآمینه",
+      "question": "یک یال اتمی است یا باقی‌مانده‌ای؟",
+      "path": "docs/course/session-29.fa.md",
+      "prerequisites": [
+        28
+      ],
+      "check": {
+        "question": "چرا با تغییر آستانهٔ فاصله ممکن است گرهٔ مرکزی عوض شود؟",
+        "answer": "چون مجموعهٔ یال‌ها تغییر می‌کند و شاخص‌های شبکه از همان یال‌ها محاسبه می‌شوند."
+      },
+      "exercise_path": "docs/exercises/topic-29.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-29.fa.md",
+      "research_path": "docs/research-notes/topic-29.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-29.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "graph",
+        "pdb"
+      ],
+      "research_source_ids": [
+        "local-geometry",
+        "network"
+      ],
+      "laboratory": "graph"
+    },
+    {
+      "session": 30,
+      "block": "networks",
+      "title": "شبکهٔ انرژی، هم‌بستگی و تفسیر مسیرها",
+      "question": "از کل پروژه دقیقاً چه می‌توان گفت؟",
+      "path": "docs/course/session-30.fa.md",
+      "prerequisites": [
+        29
+      ],
+      "check": {
+        "question": "آیا مسیر یک شبکهٔ هم‌بستگی به‌تنهایی جهت انتقال علّی را نشان می‌دهد؟",
+        "answer": "خیر. هم‌بستگی و علیت متفاوت‌اند و نتیجه به تعریف شبکه و داده وابسته است."
+      },
+      "exercise_path": "docs/exercises/topic-30.fa.md",
+      "presentation_path": "docs/presentation-notes/topic-30.fa.md",
+      "research_path": "docs/research-notes/topic-30.fa.md",
+      "case_lesson_path": "docs/research-notes/lesson-context/topic-30.fa.md",
+      "education_terms": [],
+      "education_source_ids": [
+        "graph",
+        "md"
+      ],
+      "research_source_ids": [
+        "network",
+        "local-geometry",
+        "local-mutations"
+      ],
+      "laboratory": "graph"
+    }
+  ],
+  "navigation_unit": "Nine syllabus chapters with freely selectable author-written topics; session numbers are legacy stable identifiers, not class dates.",
+  "research_question_file": "data/metadata/research-thread.json"
+}

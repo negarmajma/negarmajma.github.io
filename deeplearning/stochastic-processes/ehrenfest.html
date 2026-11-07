@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>فرآیند مهره‌ها (Ehrenfest variant) – زنجیره مارکوف</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)'], ['$', '$']]
+            },
+            chtml: {
+                mtextInheritFont: true,
+                matchFontHeight: false
+            },
+            options: {
+                renderActions: {
+                    addMenu: []
+                }
+            }
+        };
+    </script>
+    <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <script type="module" src="../assets/js/ehrenfest.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <h1 style="direction:rtl;">
+            فرآیند مهره‌ها – مدل مارکوفی
+            <span class="badge">شبیه‌سازی </span>
+        </h1>
+
+        <div class="subtitle" style="direction:rtl;">
+            جعبه‌ای با \(a\) مهره‌ی سیاه و \(b\) مهره‌ی قرمز داریم.
+            در هر گام یک مهره به‌صورت تصادفی انتخاب می‌کنیم:
+            اگر سیاه باشد، همان مهره برمی‌گردد و یک مهره‌ی سیاهِ جدید اضافه می‌کنیم؛
+            اگر قرمز باشد، همان مهره‌ی قرمز را فقط برمی‌گردانیم.
+            تعداد مهره‌های سیاه بعد از هر گام را به‌صورت یک زنجیره‌ی مارکوف مدل می‌کنیم.
+        </div>
+
+        <div class="stack">
+
+            <div class="panel">
+                <h2>
+                    پارامترها
+                    <span>شرایط اولیه و تنظیمات شبیه‌سازی</span>
+                </h2>
+
+                <form id="control-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="a">تعداد اولیه‌ی مهره‌های سیاه \(a\)</label>
+                            <input id="a" type="number" min="1" value="3" />
+                        </div>
+                        <div class="form-group">
+                            <label for="b">تعداد مهره‌های قرمز \(b\)</label>
+                            <input id="b" type="number" min="1" value="5" />
+                        </div>
+                        <div class="form-group">
+                            <label for="steps">تعداد گام‌ها (n)</label>
+                            <input id="steps" type="number" min="5" max="300" value="10" />
+                        </div>
+                        <div class="form-group">
+                            <label for="seed">بذر تصادفی</label>
+                            <input id="seed" type="number" min="1" value="1" />
+                        </div>
+                    </div>
+
+                    <div class="help-text" style="direction:rtl;">
+                        حالت سیستم را به صورت
+                        \(X_n = \text{تعداد مهره‌های سیاه بعد از گام } n\)
+                        در نظر می‌گیریم. فضای حالات
+                        \(\{a, a+1, a+2, \dots\}\) است و شبیه‌سازی فقط مسیر
+                        \(X_0,X_1,\dots,X_n\) را برای شما تولید می‌کند و روی جعبه نشان می‌دهد.
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="button" id="random-seed-btn">
+                            🎲 بذر جدید
+                        </button>
+                        <button type="submit" class="primary">
+                            ▶ اجرای شبیه‌سازی
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="panel chart-panel">
+                <h2>
+                    جعبه‌ی مهره‌ها در طول گام‌ها
+                    <span>نمایش  + اسلایدر زمان</span>
+                </h2>
+
+                <div id="three-container" style="width: 100%; height: 320px;"></div>
+
+                <div class="info-panel">
+                    <div class="info-row">
+                        <span class="label">انتخاب گام</span>
+                        <span id="step-label" class="pill">گام ۰</span>
+                    </div>
+                    <input type="range" id="stepSlider" min="0" max="80" value="0" />
+
+                    <div class="details-grid">
+                        <div class="k">سیاه قبل از گام</div>
+                        <div class="k">قرمز (ثابت)</div>
+                        <div class="k">رنگ مهره‌ی انتخابی</div>
+                        <div class="k">سیاه بعد از گام</div>
+
+                        <div id="detail-black-before" class="v">–</div>
+                        <div id="detail-red" class="v">–</div>
+                        <div id="detail-color" class="v">–</div>
+                        <div id="detail-black-after" class="v">–</div>
+                    </div>
+
+                    <div class="eq-explainer">
+                        احتمال‌های شرطی در این گام:
+                        <div id="eq-probs" class="eq-line">–</div>
+                        رابطه‌ی به‌روزرسانی:
+                        <div id="eq-update" class="eq-line">–</div>
+                    </div>
+                </div>
+            </div>
+            <section class="math-panel" style="direction:rtl;">
+                <h3>مدل‌سازی به صورت زنجیره‌ی مارکوف</h3>
+
+                <h4>۱. تعریف حالت‌ها</h4>
+                <p>
+                    در ابتدا جعبه شامل \(a\) مهره‌ی سیاه و \(b\) مهره‌ی قرمز است.
+                    در هر گام، یک مهره به‌صورت یکنواخت از بین مهره‌های موجود انتخاب می‌کنیم.
+                </p>
+                <p>
+                    متغیر حالت را به صورت
+                    \[
+                    X_n = n \text{تعداد مهره‌های سیاه بعد از گام }
+                    \]
+                    تعریف می‌کنیم. تعداد مهره‌های قرمز همیشه \(b\) باقی می‌ماند، زیرا
+                    اگر مهره‌ی قرمز انتخاب شود، فقط همان مهره را برمی‌گردانیم
+                    و مهره‌ی جدیدی اضافه نمی‌کنیم.
+                </p>
+
+                <h4>۲. چرا \(\{X_n\}\) زنجیره‌ی مارکوف است؟</h4>
+                <p>
+                    در گام \(n+1\)، انتخاب مهره فقط به وضعیت فعلی جعبه (یعنی \(X_n\) سیاه و \(b\) قرمز)
+                    بستگی دارد؛ الگوریتم آینده از تاریخچه‌ی قبل از \(n\) استفاده نمی‌کند.
+                </p>
+                <p>
+                    اگر در گام \(n\) تعداد مهره‌های سیاه برابر \(k\) باشد، آنگاه:
+                    <br />
+                    – با احتمال \(\dfrac{k}{k+b}\) مهره‌ی انتخابی سیاه است و تعداد مهره‌های سیاه
+                    یکی زیاد می‌شود؛<br />
+                    – با احتمال \(\dfrac{b}{k+b}\) مهره‌ی انتخابی قرمز است و تعداد مهره‌های سیاه
+                    تغییر نمی‌کند.
+                </p>
+                <p>
+                    بنابراین
+                    \[
+                    X_{n+1} =
+                    \begin{cases}
+                    k+1, & \text{با احتمال } \dfrac{k}{k+b},\\[4pt]
+                    k, & \text{با احتمال } \dfrac{b}{k+b},
+                    \end{cases}
+                    \quad \text{به شرط } X_n = k.
+                    \]
+                    از آنجا که توزیع \(X_{n+1}\) فقط به \(X_n\) وابسته است و نه به
+                    \(X_{n-1},\dots,X_0\)، فرآیند \(\{X_n\}\) ویژگی مارکوف را دارد:
+                    \[
+                    P(X_{n+1}=j \mid X_n=i, X_{n-1},\dots,X_0)
+                    = P(X_{n+1}=j \mid X_n=i).
+                    \]
+                </p>
+
+                <h4>۳. احتمال‌های گذار یک‌مرحله‌ای</h4>
+                <p>
+                    فضای حالات زنجیره برابر است با
+                    \[
+                    S = \{a, a+1, a+2, \dots\},
+                    \]
+                    زیرا در هر گام حداکثر یک مهره‌ی سیاه جدید اضافه می‌شود و هیچ‌وقت
+                    مهره‌ی سیاه حذف نمی‌کنیم.
+                </p>
+                <p>
+                    اگر در حالت \(k \in S\) باشیم (یعنی \(k\) مهره‌ی سیاه و \(b\) مهره‌ی قرمز):
+                </p>
+                <ul>
+                    <li>
+                        احتمال اینکه مهره‌ی انتخاب‌شده سیاه باشد
+                        \(\displaystyle \frac{k}{k+b}\) است و در این صورت
+                        \(X_{n+1} = k+1\).
+                    </li>
+                    <li>
+                        احتمال اینکه مهره‌ی انتخاب‌شده قرمز باشد
+                        \(\displaystyle \frac{b}{k+b}\) است و در این صورت
+                        \(X_{n+1} = k\).
+                    </li>
+                </ul>
+                <p>
+                    پس احتمال‌های گذار تک‌مرحله‌ای \(p_{ij} = P(X_{n+1}=j \mid X_n=i)\) به صورت زیر است:
+                    \[
+                    p_{ij} =
+                    \begin{cases}
+                    \dfrac{i}{i+b}, & j = i+1,\\[6pt]
+                    \dfrac{b}{i+b}, & j = i,\\[4pt]
+                    0,&.\text{در غیر این صورت}
+                    \end{cases}
+                    \]
+                </p>
+                <p>
+                    روی نمودار، هر گام \(n \to n+1\) یک نمونه‌گیری از همین احتمال‌های
+                    \(p_{i,i}\) و \(p_{i,i+1}\) است.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="direction: ltr;">
+            <span class="footer-logo" aria-hidden="true"><img src="../assets/img/logo.png"></span>
+            <span class="footer-text">
+                ©
+                <a href="https://hoosh.pro" target="_blank" rel="noopener">
+                    HOOSH PRO
+                </a>
+                — MADE WITH
+                <span class="footer-heart" aria-hidden="true">♥</span>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>

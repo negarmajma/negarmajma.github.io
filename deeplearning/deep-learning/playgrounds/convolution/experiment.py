@@ -1,0 +1,43 @@
+"""این کد روی تصویر مصنوعی محاسبه می‌کند؛ آموزش فیلتر انجام نمی‌شود."""
+
+from convolution_lab import correlate, pattern, pool  # عملیات واقعی و قابل‌ویرایش
+
+# BEGIN CONFIG
+CONFIG = {  # مقدار اولیهٔ کنترل‌ها؛ با هر تغییر خروجی دوباره محاسبه می‌شود
+    "pattern": "vertical",  # تصویر ۸×۸ با یک لبهٔ عمودی
+    "kernel": [[-1, 0, 1], [-1, 0, 1], [-1, 0, 1]],  # همین ۹ وزن در همهٔ پنجره‌ها مشترک‌اند
+    "bias": 0.0,  # عددی که به مجموع ضرب‌های هر پنجره اضافه می‌شود
+    "stride": 1,  # فاصلهٔ حرکت پنجره؛ گام بیشتر معمولاً خروجی کوچک‌تر می‌دهد
+    "padding": 0,  # تعداد سطر/ستون صفر در هر طرف ورودی
+    "flip": False,  # True هسته را برای convolution ریاضی ۱۸۰ درجه می‌چرخاند
+    "relu": False,  # True مقدارهای منفی را بعد از فیلتر صفر می‌کند
+    "pooling": "none",  # none، max یا average؛ اینجا پنجرهٔ تجمیع ۲×۲ است
+}
+# END CONFIG
+
+
+def calculate(config):  # ورودی تابع، تنظیمات فعلی کنترل‌های کنار تصویر است
+    image = pattern(config["pattern"])  # جدول عددهای تصویر را می‌سازیم
+    raw = correlate(  # پنجره حرکت می‌کند و در هر خانه جمع وزن‌دار واقعی حساب می‌شود
+        [image],  # یک کانال ورودی داریم
+        [config["kernel"]],  # یک برش هسته برای همان کانال
+        config["bias"],  # بایاس پس از جمع ضرب‌ها اضافه می‌شود
+        config["stride"],  # گام حرکت روی تصویر
+        config["padding"],  # حاشیهٔ صفر؛ تعداد وزن‌ها را عوض نمی‌کند
+        config["flip"],  # قرارداد چرخاندن هسته
+    )
+    activated = []  # جدول خروجیِ بعد از فعال‌سازی
+    for row in raw["output"]:
+        output_row = []
+        for value in row:
+            if config["relu"]:
+                value = max(0, value)  # ReLU مقدار منفی را صفر می‌کند
+            output_row.append(value)
+        activated.append(output_row)
+    pooled = None  # بدون تجمیع، همین خروجی نگه داشته می‌شود
+    if config["pooling"] != "none":
+        pooled = pool(activated, mode=config["pooling"])  # تجمیع بعد از فعال‌سازی است
+    return {"image": image, "raw": raw, "activated": activated, "pooled": pooled}  # نتیجهٔ همین کد برای نمودارها
+
+# «جمع ضرب‌ها»: در correlate می‌توان خود value * weight و جمع + bias را تغییر داد.
+# «تجمیع»: pool بیشینه یا میانگین هر پنجره را می‌سازد؛ عوض‌کردنش خروجی آخر را تغییر می‌دهد.

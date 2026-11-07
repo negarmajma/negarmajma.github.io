@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>مسأله ۸ وزیر با الگوریتم ژنتیک</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <style>
+        .ga-pop-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 6px;
+            font-size: 0.8rem;
+        }
+
+        .ga-pop-table th,
+        .ga-pop-table td {
+            border: 1px solid var(--border);
+            padding: 4px 6px;
+            text-align: center;
+            background: #ffffff;
+            vertical-align: middle;
+        }
+
+        .ga-pop-table th {
+            background: #f3f4f6;
+            color: var(--text-soft);
+        }
+
+        .chromosome-cell {
+            direction: ltr;
+            text-align: center;
+            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            white-space: nowrap;
+            overflow-x: auto;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .ga-pop-table td:nth-child(3) {
+            font-size: 0.75rem;
+            color: var(--text-soft);
+            white-space: nowrap;
+        }
+
+        .ga-row-best {
+            background: var(--accent-soft);
+        }
+
+        .ga-row-solution {
+            outline: 2px solid #10b981;
+            outline-offset: -2px;
+        }
+
+        .ga-row-target {
+            outline: 2px solid #8b5cf6;
+            outline-offset: -2px;
+        }
+
+        .ga-row-selectable {
+            cursor: pointer;
+        }
+
+        .board-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .board {
+            --n: 8;
+            display: grid;
+            grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+            width: min(560px, 92vw);
+            aspect-ratio: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            direction: ltr;
+        }
+
+        .square {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: clamp(0.55rem, 2.3vw, 1.2rem);
+            user-select: none;
+            box-shadow: none;
+        }
+
+        .square.light {
+            background: #f9fafb;
+        }
+
+        .square.dark {
+            background: #e5e7eb;
+        }
+
+        .square.diag-safe {
+            box-shadow: inset 0 0 0 999px rgba(16, 185, 129, 0.18);
+        }
+
+        .square.diag-conflict {
+            box-shadow: inset 0 0 0 999px rgba(239, 68, 68, 0.18);
+        }
+
+        .square.conflict {
+            background: var(--danger-soft);
+            box-shadow: none;
+        }
+
+        .square.safe {
+            background: #dcfce7;
+            box-shadow: none;
+        }
+
+        .board-legend {
+            font-size: 0.78rem;
+            color: var(--text-soft);
+            line-height: 1.5;
+            white-space: pre-line;
+        }
+
+        .error-text {
+            font-size: 0.8rem;
+            color: var(--danger);
+            margin-top: 6px;
+            white-space: pre-line;
+        }
+
+        .pill-muted {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--text-soft);
+            font-size: 0.78rem;
+            margin-top: 6px;
+        }
+
+        .target-options {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            font-size: 0.8rem;
+            margin-top: 6px;
+        }
+
+        .target-options label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+    </style>
+
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['\\(', '\\)'], ['$', '$']] },
+            chtml: {
+                mtextInheritFont: true,
+                merrorInheritFont: true,
+                matchFontHeight: true,
+                unknownFamily: 'arad, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+            },
+            options: { renderActions: { addMenu: [] } }
+        };
+    </script>
+    <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <script type="module" src="../assets/js/eight-queens-ga.js"></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <h1>
+            مسأله ۸ وزیر با الگوریتم ژنتیک
+            <span class="badge">Pop=4 • MaxGen=2 • Crossover=50% • Mutation=25% • PMX + Swap + Elite</span>
+        </h1>
+
+        <div class="subtitle">
+            کروموزوم یک <strong>جایگشت</strong> از 1..8 است؛ در هر ردیف دقیقاً یک وزیر داریم و چون ستون‌ها تکراری
+            نیستند،
+            <strong>برخورد ستونی نداریم</strong> و فقط <strong>قطرها</strong> بررسی می‌شوند.
+            <br />
+            نمایش: قطرهای درگیر کم‌رنگ قرمز، قطرهای امن کم‌رنگ سبز؛ خودِ وزیرها (درگیر/امن) پررنگ‌تر.
+        </div>
+
+        <div class="stack">
+            <div class="panel">
+                <h2>
+                    پارامترها
+                    <span>GA ثابت • توقف هدف (اختیاری)</span>
+                </h2>
+
+                <form id="ga8-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Population Size</label>
+                            <input type="number" value="4" disabled />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Hard Max Gen</label>
+                            <input type="number" value="2" disabled />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Crossover</label>
+                            <input type="number" value="50" disabled />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Mutation</label>
+                            <input type="number" value="25" disabled />
+                        </div>
+
+                        <div class="form-group">
+                            <label>جواب دلخواه (اختیاری)</label>
+                            <div class="target-options">
+                                <label>
+                                    <input type="radio" name="target-solution" value="1" checked />
+                                    1 5 8 6 3 7 2 4
+                                </label>
+                                <label>
+                                    <input type="radio" name="target-solution" value="2" />
+                                    2 4 6 8 3 1 7 5
+                                </label>
+                                <label>
+                                    <input type="radio" name="target-solution" value="3" />
+                                    4 2 5 8 6 1 3 7
+                                </label>
+                            </div>
+                            <div class="hint" style="margin-top:6px; color:var(--text-soft); font-size:0.78rem;">
+                                • هدف فقط شرط توقف/هایلایت است و در محاسبه برازندگی نقشی ندارد.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="ga8-error" class="error-text"></div>
+
+                    <div class="help-text">
+                        در هر نسل:
+                        <strong>۲</strong> فرزند PMX،
+                        <strong>۱</strong> جهش Swap،
+                        و <strong>۱</strong> کپیِ <strong>بهترین نسل قبل</strong>.
+                        <br />
+                        (pairs فقط برای فرد انتخاب‌شده محاسبه می‌شود)
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="submit" class="primary">▶ اجرای GA</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- پنل نسل‌ها -->
+            <div class="panel chart-panel">
+                <h2>
+                    نسل‌ها و جمعیت
+                    <span>اسلایدر را حرکت بده تا روند را ببینی</span>
+                </h2>
+
+                <div class="info-panel">
+                    <div class="info-row">
+                        <span class="label">انتخاب نسل</span>
+                        <span id="ga8-gen-label" class="pill">—</span>
+                    </div>
+
+                    <input type="range" id="ga8-gen-slider" min="0" max="0" value="0" />
+                    <div id="ga8-gen-stats" class="pill-muted">—</div>
+
+                    <div class="eq-explainer" style="margin-top:8px;">
+                        جمعیت این وضعیت (۴ کروموزوم):
+                        <div id="ga8-population-box"></div>
+                    </div>
+
+                    <div class="eq-explainer" style="margin-top:10px;">
+                        کروموزوم انتخاب‌شده و صفحه:
+                        <div class="board-wrapper">
+                            <div id="ga8-board" class="board" style="--n:8;"></div>
+                            <div id="ga8-selected-info" class="board-legend">هیچ کروموزومی انتخاب نشده است.</div>
+                        </div>
+                    </div>
+
+                    <div class="eq-explainer" style="margin-top:10px;">
+                        جزئیات برازندگی (دو حلقه، فقط قطر):
+                        <div id="ga8-fitness-details" class="eq-line">–</div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="math-panel" style="direction:rtl;">
+                <h3>روش ارزیابی تابع برازندگی (فلوچارت مفهومی)</h3>
+
+                <p>
+                    برای هر کروموزوم \(Q = [q_1,\dots,q_8]\) داریم:
+                    \(q_i\) ستون وزیر در سطر \(i\) است.
+                    چون کروموزوم یک <strong>جایگشت</strong> از 1..8 است، برخورد ستونی نداریم و فقط قطرها بررسی می‌شوند.
+                    تعداد کل جفت‌های ممکن بین ۸ وزیر برابر است با
+                    \(\binom{8}{2} = 28\).
+                </p>
+
+                <h4>گام‌های فلوچارت برای یک کروموزوم</h4>
+                <ol>
+                    <li>شروع</li>
+                    <li>ورودی: کروموزوم \(Q = [q_1,\dots,q_8]\)</li>
+                    <li>مقداردهی: <code>conflicts = 0</code></li>
+                    <li>
+                        حلقه‌ی بیرونی: <code>i = 1</code> تا <code>7</code><br />
+                        حلقه‌ی درونی: <code>j = i+1</code> تا <code>8</code>
+                    </li>
+                    <li>
+                        برای هر جفت \((i,j)\):
+                        <ul>
+                            <li>
+                                اگر \(\lvert q_i - q_j \rvert = \lvert i - j \rvert\)
+                                ⇒ روی یک قطر مشترک‌اند ⇒ <code>conflicts++</code>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        پس از بررسی همه‌ی جفت‌ها:
+                        \[
+                        fitness = 28 - conflicts
+                        \]
+                        یعنی هر چه تعداد برخوردهای قطری کمتر باشد، برازندگی بیشتر است.
+                        برای جواب‌های بدون برخورد، برازندگی برابر ۲۸ است.
+                    </li>
+                    <li>خروجی: نمایش <code>conflicts</code> و <code>fitness</code> و پایان.</li>
+                </ol>
+
+                <p>
+                    همین منطق در این صفحه برای کروموزوم انتخاب‌شده اجرا می‌شود
+                    و تعداد برخورد و برازندگی آن نمایش داده می‌شود.
+                </p>
+            </section>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-inner" style="direction:ltr;">
+            <span class="footer-logo" aria-hidden="true">
+                <img src="../assets/img/logo.png" alt="" />
+            </span>
+            <span class="footer-text">
+                © <a href="https://hoosh.pro" target="_blank" rel="noopener">HOOSH PRO</a>
+                — MADE WITH <span class="footer-heart" aria-hidden="true">♥</span>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>

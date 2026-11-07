@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fa" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>زنجیره مارکوف موجودی (b,B) – شبیه‌سازی </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)'], ['$', '$']]
+            },
+            chtml: {
+                mtextInheritFont: true,
+                merrorInheritFont: true,
+                matchFontHeight: true,
+                unknownFamily: 'arad, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif'
+            },
+            options: {
+                renderActions: {
+                    addMenu: []
+                }
+            }
+        };
+    </script>
+    <script async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+    <script src="../assets/js/inventory.js" defer></script>
+</head>
+
+<body>
+    <div class="app-container">
+        <h1 style="direction:rtl;">
+            زنجیره مارکوف موجودی (b,B)
+            <span class="badge">شبیه‌سازی </span>
+        </h1>
+        <div class="subtitle" style="direction:rtl;">
+            تقاضای هفتگی \(Y_i\) مستقل و دارای توزیع یکسان
+            \(P(Y=j)=a_j\) است.
+        </div>
+        <div class="subtitle" style="direction:rtl;">
+            سیاست \((b,B)\) روی سیستم اعمال می‌کنیم
+            و نشان می دهیم دنباله‌ی موجودی‌ها \(X_n\) یک زنجیره مارکوف می‌شود.
+        </div>
+
+        <div class="stack">
+            <div class="panel">
+                <h2>
+                    پارامترها
+                </h2>
+                <form id="control-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="weeks">تعداد هفته‌ها (افق زمانی)</label>
+                            <input id="weeks" type="number" min="5" max="200" value="52" />
+                        </div>
+                        <div class="form-group">
+                            <label for="x0">موجودی اولیه \(X_0\)</label>
+                            <input id="x0" type="number" min="0" value="5" />
+                        </div>
+                        <div class="form-group">
+                            <label for="B">سطح سفارش تا \(B\)</label>
+                            <input id="B" type="number" min="1" value="10" />
+                        </div>
+                        <div class="form-group">
+                            <label for="b">آستانه سفارش مجدد \(b\)</label>
+                            <input id="b" type="number" min="0" value="4" />
+                        </div>
+                        <div class="form-group" style="grid-column: 1 / -1;">
+                            <label for="pmf">
+                                احتمالات تقاضا \((a_0,a_1,\dots)\)
+                            </label>
+                            <textarea id="pmf" rows="2">0.3, 0.3, 0.2, 0.2</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="seed">بذر تصادفی</label>
+                            <input id="seed" type="number" min="1" value="1" />
+                        </div>
+                    </div>
+                    <div class="help-text" style="direction:rtl;">
+                        ضرایب \(a_0,a_1,\dots,a_K\) را با ویرگول جدا کنید، مثلاً
+                        <code>0.3, 0.3, 0.2, 0.2</code>
+                    </div>
+                    <div class="help-text" style="direction:rtl;">
+                        \[P(Y=0)=0.3, P(Y=1)=0.3, P(Y=2)=0.2, P(Y=3)=0.2\]
+                    </div>
+                    <div class="help-text" style="direction:rtl;">
+                        مقادیر به‌طور خودکار نرمال‌سازی می‌شوند تا جمعشان ۱ شود.
+                        اگر بذر و پارامترها ثابت باشند، مسیر شبیه‌سازی هم تکرارپذیر است.
+                    </div>
+                    <div class="btn-row">
+                        <button type="button" id="random-seed-btn">
+                            🎲 بذر جدید
+                        </button>
+                        <button type="submit" class="primary">
+                            ▶ اجرای شبیه‌سازی
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="panel chart-panel">
+                <h2>
+                    تغییرات موجودی در زمان
+                    <span>نمودار پله‌ای + پرش‌های سفارش</span>
+                </h2>
+                <canvas id="inventoryChart"></canvas>
+
+                <div class="info-panel">
+                    <div class="info-row">
+                        <span class="label">انتخاب هفته</span>
+                        <span id="week-label" class="pill">هفته ۱</span>
+                    </div>
+                    <input type="range" id="weekSlider" min="1" max="52" value="1" />
+                    <div class="details-grid">
+                        <div class="k">شروع هفته</div>
+                        <div class="k">سفارش</div>
+                        <div class="k">تقاضا</div>
+                        <div class="k">پایان هفته</div>
+                        <div id="detail-start" class="v">–</div>
+                        <div id="detail-order" class="v">–</div>
+                        <div id="detail-demand" class="v">–</div>
+                        <div id="detail-end" class="v">–</div>
+                    </div>
+                    <div class="eq-explainer">
+                        رابطه‌ی استفاده‌شده در این هفته:
+                        <div id="eq-branch" class="eq-line">–</div>
+                        <div id="eq-eval" class="eq-line">–</div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="math-panel" style="direction:rtl;">
+                <h3>چطور مدل و روابط، مسئله را حل می‌کنند؟</h3>
+
+                <h4>۱. تقاضای تصادفی و حالت مارکوفی</h4>
+                <p>
+                    تقاضای هفتگی \(Y_1, Y_2, \dots\) داریم که
+                    \[
+                    P(Y_n = j) = a_j,\quad j=0,1,2,\dots,\ \forall n,
+                    \]
+                    و دنباله \(\{Y_n\}\) مستقل و هم‌توزیع است.
+                </p>
+                <p>
+                    حالت سیستم، موجودی پایان هفته است:
+                    \[
+                    X_n = \text{موجودی بعد از پایان هفته } n.
+                    \]
+                    همین مقادیر روی نمودار پله‌ای رسم شده‌اند.
+                </p>
+
+                <h4>۲. سیاست سفارش \((b,B)\)</h4>
+                <p>
+                    در ابتدای هفته \(n+1\)، به \(X_n\) نگاه می‌کنیم:
+                </p>
+                <ul>
+                    <li>اگر \(X_n \ge b\): سفارشی داده نمی‌شود.</li>
+                    <li>اگر \(X_n &lt; b\): به اندازه \(B - X_n\) سفارش می‌دهیم تا انبار به سطح \(B\) برسد.</li>
+                </ul>
+                <p>
+                    بنابراین مقدار سفارش
+                    \[
+                    Q_{n+1} =
+                    \begin{cases}
+                    0, & X_n \ge b,\\
+                    B - X_n, & X_n &lt; b.
+                    \end{cases}
+                    \]
+                    پس موجودی ابتدای هفته \(n+1\) برابر است با
+                    \[
+                    I_{n+1}^{\text{start}} =
+                    \begin{cases}
+                    X_n, & X_n \ge b,\\
+                    B, & X_n &lt; b.
+                    \end{cases}
+                    \]
+                </p>
+
+                <h4>۳. رابطه به‌روزرسانی موجودی</h4>
+                <p>
+                    در طول هفته \(n+1\)، تقاضای \(Y_{n+1}\) رخ می‌دهد. تا جایی که موجودی اجازه بدهد
+                    می‌فروشیم و زیر صفر نمی‌رویم:
+                    \[
+                    X_{n+1} = \max\bigl(I_{n+1}^{\text{start}} - Y_{n+1}, 0\bigr).
+                    \]
+                    با جای‌گذاری دو حالت داریم
+                    \[
+                    X_{n+1} =
+                    \begin{cases}
+                    \max(X_n - Y_{n+1}, 0), & X_n \ge b,\\[4pt]
+                    \max(B - Y_{n+1}, 0), & X_n &lt; b.
+                    \end{cases}
+                    \]
+                </p>
+                <p>
+                    در انیمیشن، برای هر هفته مشخص می‌شود کدام شاخه (بالای \(b\) یا زیر \(b\))
+                    فعال است و سپس مقدار \(\max(\cdot,0)\) عددی محاسبه می‌شود.
+                </p>
+
+                <h4>۴. چرا \(\{X_n\}\) یک زنجیره مارکوف است؟</h4>
+                <p>
+                    حالت بعدی \(X_{n+1}\) تابعی از \(X_n\) و تقاضای جدید \(Y_{n+1}\) است:
+                    \[
+                    X_{n+1} = f(X_n, Y_{n+1}).
+                    \]
+                    چون \(Y_{n+1}\) مستقل از گذشته است و هم‌توزیع با بقیه‌ی \(Y_n\)‌هاست، داریم
+                    \[
+                    P(X_{n+1}=j \mid X_n=i, X_{n-1},\dots,X_0)
+                    = P(X_{n+1}=j \mid X_n=i).
+                    \]
+                    پس \(\{X_n\}\) یک زنجیره مارکوف همگن (زمان‌همگن) است.
+                </p>
+
+                <h4>۵. احتمال‌های گذار تک‌مرحله‌ای \(p_{ij}\)</h4>
+                <p>
+                    چون موجودی هیچ‌وقت از \(0\) کمتر و از \(B\) بیشتر نمی‌شود، فضای حالات
+                    برابر است با
+                    \[
+                    S = \{0,1,\dots,B\}.
+                    \]
+                </p>
+                <p>
+                    اگر \(a_k = P(Y = k)\) باشد، احتمال‌های گذار تک‌مرحله‌ای
+                    \(p_{ij} = P(X_{n+1}=j \mid X_n=i)\) به صورت زیرند.
+                </p>
+                <p>
+                    اگر \(i \ge b\) (سفارش نمی‌دهیم و از \(i\) شروع می‌کنیم):
+                    \[
+                    p_{ij} =
+                    \begin{cases}
+                    \displaystyle \sum_{k=i}^\infty a_k, & j=0,\\[8pt]
+                    a_{i-j}, & j=1,2,\dots,i,\\[4pt]
+                    0, & j>i.
+                    \end{cases}
+                    \]
+                </p>
+                <p>
+                    اگر \(i &lt; b\) (سفارش تا سطح \(B\)، یعنی شروع از \(B\)):
+                    \[
+                    p_{ij} =
+                    \begin{cases}
+                    \displaystyle \sum_{k=B}^\infty a_k, & j=0,\\[8pt]
+                    a_{B-j}, & j=1,2,\dots,B,\\[4pt]
+                    0, & j>B.
+                    \end{cases}
+                    \]
+                </p>
+                <p>
+                    هر پرش \(i \to j\) که روی نمودار می‌بینید، یک تحقق تصادفی
+                    از همین \(p_{ij}\)‌هاست، با استفاده از توزیع \(\{a_j\}\) انتخاب‌شده‌ی شما.
+                </p>
+            </section>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-inner" style="direction: ltr;">
+            <span class="footer-logo" aria-hidden="true"><img src="../assets/img/logo.png"></span>
+            <span class="footer-text">
+                ©
+                <a href="https://hoosh.pro" target="_blank" rel="noopener">
+                    HOOSH PRO
+                </a>
+                — MADE WITH
+                <span class="footer-heart" aria-hidden="true">♥</span>
+            </span>
+        </div>
+    </footer>
+</body>
+
+</html>

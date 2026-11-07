@@ -1,0 +1,467 @@
+{
+  "session_id": "s02",
+  "source_sha256": "fd1415e6b0888e50a952c805477237eb48aa145a85926a931f435b6f112dc477",
+  "source_url": "https://home.cs.colorado.edu/~DrG/Courses/2026-Spring-NN/02-Artificial-Neurons.pdf",
+  "source_page_count": 51,
+  "title_fa": "یک به‌روزرسانی واقعی پرسپترون",
+  "prediction_fa": "وقتی پیش‌بینی درست است، وزن‌ها چقدر تغییر می‌کنند؟",
+  "steps_fa": [
+    "پیش از اجرا، پیش‌بینی در امتیاز صفر و مقدار delta را حساب کن.",
+    "target را از -1 به 1 تغییر بده؛ سپس قرارداد آستانه را از >= به > تغییر بده و خروجی را مقایسه کن.",
+    "با خود همین قانون توضیح بده کدام حالت باعث به‌روزرسانی صفر می‌شود."
+  ],
+  "source_page": 26,
+  "starter_sha256": "97756e35fdbb0dac66bbf3721bd07ae49f814a1352ff43b65197386c7d9dba93",
+  "reference": {
+    "before": 1,
+    "delta": -0.2,
+    "weights": [
+      -0.2,
+      -0.4
+    ],
+    "bias": -0.2,
+    "after": -1
+  },
+  "questions": [
+    {
+      "id": "calculate",
+      "source_kind": "original",
+      "prompt_fa": "در نسخهٔ اولیه مقدار delta چند است؟",
+      "solution_fa": "0.1 × (-1 - 1) = -0.2.",
+      "answer": {
+        "kind": "number",
+        "value": -0.2,
+        "tolerance": 1e-06
+      },
+      "source_page": 27
+    },
+    {
+      "id": "interpret",
+      "source_kind": "original",
+      "prompt_fa": "اگر برچسب و پیش‌بینی برابر باشند، کدام درست است؟",
+      "solution_fa": "اختلاف برچسب و پیش‌بینی صفر است؛ وزن و بایاس ثابت می‌مانند.",
+      "answer": {
+        "kind": "choice",
+        "options_fa": [
+          "وزن‌ها دوبرابر می‌شوند",
+          "به‌روزرسانی صفر می‌شود",
+          "بایاس حتماً کم می‌شود"
+        ],
+        "correct_index": 1
+      },
+      "source_page": 20
+    },
+    {
+      "id": "explain",
+      "source_kind": "original",
+      "prompt_fa": "چرا قاعدهٔ پرسپترون برای پیش‌بینی درست، وزن و بایاس را تغییر نمی‌دهد؟ یک مثال از همین کد بیاور.",
+      "solution_fa": "اگر target با before برابر باشد، اختلاف آن‌ها صفر است؛ بنابراین delta و همهٔ افزایش‌های وزن و بایاس صفر می‌شوند. با target=1 در نسخهٔ اولیه این حالت دیده می‌شود.",
+      "answer": {
+        "kind": "manual",
+        "criteria_fa": [
+          "نوشتن target-before",
+          "صفرشدن delta",
+          "مثال مشخص از کد"
+        ]
+      },
+      "source_page": 20
+    }
+  ],
+  "question_pages": [
+    5,
+    12,
+    13,
+    17,
+    19,
+    21,
+    22,
+    23,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    43,
+    44
+  ],
+  "class_activity_pages": [
+    44
+  ],
+  "programming_tutorial_pages": [
+    49
+  ],
+  "reference_python": "3.13.9",
+  "limits_fa": "این کد و دادهٔ کوچک، تألیف مستقل برای بررسی سازوکار است؛ بازتولید آزمایش مقاله یا تکلیف رسمی Canvas نیست. فقط فرمول‌ها و پارامترهایی که در کد می‌بینی محاسبه می‌شوند.",
+  "source_retrieved_at_utc": "2026-10-25T08:44:45.533801+00:00",
+  "related_labs": [
+    {
+      "id": "neuron-xor",
+      "goal_fa": "پرسپترون را انتخاب کن و تغییر وزن روی جدول درستی را ببین."
+    }
+  ],
+  "source_examples": [
+    {
+      "id": "majority-epoch",
+      "title_fa": "یک دور آموزش پرسپترون اکثریت",
+      "pages": [
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ],
+      "code_file": "s02_majority_epoch.py",
+      "starter_sha256": "d88cb4cd075656f235415925cff9fb0692c02b6b18d3eb3a811e460821bb97bf",
+      "reference": {
+        "trace": [
+          {
+            "score": 0.0,
+            "prediction": 1,
+            "target": -1,
+            "error": -2,
+            "weights": [
+              -0.2,
+              -0.2,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "score": -0.4,
+            "prediction": -1,
+            "target": 1,
+            "error": 2,
+            "weights": [
+              0.0,
+              0.0,
+              0.0,
+              0.2
+            ]
+          },
+          {
+            "score": 0.0,
+            "prediction": 1,
+            "target": 1,
+            "error": 0,
+            "weights": [
+              0.0,
+              0.0,
+              0.0,
+              0.2
+            ]
+          },
+          {
+            "score": 0.2,
+            "prediction": 1,
+            "target": 1,
+            "error": 0,
+            "weights": [
+              0.0,
+              0.0,
+              0.0,
+              0.2
+            ]
+          },
+          {
+            "score": 0.2,
+            "prediction": 1,
+            "target": -1,
+            "error": -2,
+            "weights": [
+              -0.2,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "score": -0.2,
+            "prediction": -1,
+            "target": -1,
+            "error": 0,
+            "weights": [
+              -0.2,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          {
+            "score": -0.2,
+            "prediction": -1,
+            "target": 1,
+            "error": 2,
+            "weights": [
+              0.0,
+              0.0,
+              0.2,
+              0.2
+            ]
+          },
+          {
+            "score": 0.0,
+            "prediction": 1,
+            "target": -1,
+            "error": -2,
+            "weights": [
+              -0.2,
+              0.0,
+              0.2,
+              0.2
+            ]
+          }
+        ],
+        "final_weights": [
+          -0.2,
+          0.0,
+          0.2,
+          0.2
+        ],
+        "final_predictions": [
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          -1
+        ],
+        "final_errors": 2
+      },
+      "questions": [
+        {
+          "id": "zero",
+          "source_kind": "original",
+          "source_page": 25,
+          "prompt_fa": "با وزن‌ها و بایاس صفر، پیش‌بینی ورودی اول [1,0,0] چیست؟",
+          "solution_fa": "قرارداد پرسپترون صفحهٔ 20 برای امتیاز صفر خروجی+1 است؛ هدف این نمونه−1 است.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "+1",
+              "−1",
+              "0"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "first-update",
+          "source_kind": "original",
+          "source_page": 27,
+          "prompt_fa": "بعد از نمونهٔ اول با نرخ 0.1، وزن‌های [بایاس,w1,w2,w3] چیست؟",
+          "solution_fa": "اختلاف هدف و پیش‌بینی−2 است و در [1,1,0,0] ضرب می‌شود.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "[0,0,0,0]",
+              "[−0.2,−0.2,0,0]",
+              "[−0.1,−0.1,0,0]"
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "second",
+          "source_kind": "original",
+          "source_page": 28,
+          "prompt_fa": "امتیاز نمونهٔ دوم [1,0,1] با وزن‌های پس از گام اول چیست؟",
+          "solution_fa": "بایاس−0.2 و سهم ورودی اول−0.2 است؛ جمع−0.4 می‌شود.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "0.2",
+              "−0.2",
+              "−0.4"
+            ],
+            "correct_index": 2
+          }
+        },
+        {
+          "id": "second-update",
+          "source_kind": "original",
+          "source_page": 30,
+          "prompt_fa": "پس از به‌روزرسانی نمونهٔ دوم، وزن‌ها چیست؟",
+          "solution_fa": "خطای برچسب+2 است؛ بایاس و w1 به صفر برمی‌گردند و w3 برابر 0.2 می‌شود.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "[0,0,0,0.2]",
+              "[0.2,0.2,0,0.2]",
+              "[−0.2,−0.2,0,0]"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "epoch",
+          "source_kind": "original",
+          "source_page": 31,
+          "prompt_fa": "یک epoch در همین مثال یعنی چه؟",
+          "solution_fa": "epoch یک عبور از مجموعهٔ آموزشی است؛ با همگرایی یکی نیست.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "تنها اولین نمونه",
+              "یک بار عبور از هر 8 نمونه به ترتیب جدول",
+              "آموزش تا خطای صفر با هر تعداد عبور"
+            ],
+            "correct_index": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "majority-epochs",
+      "title_fa": "شش دور آموزش با محاسبهٔ دقیق",
+      "pages": [
+        32
+      ],
+      "code_file": "s02_majority_epochs.py",
+      "starter_sha256": "736d97197b00c208390c5c5d72eb3ca476d19bc123cf755dbf839856386a69bc",
+      "reference": {
+        "history": [
+          {
+            "epoch": 0,
+            "weights": [
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "training_errors": 4
+          },
+          {
+            "epoch": 1,
+            "weights": [
+              -0.2,
+              0.0,
+              0.2,
+              0.2
+            ],
+            "online_mistakes": 5,
+            "training_errors": 2
+          },
+          {
+            "epoch": 2,
+            "weights": [
+              -0.2,
+              0.0,
+              0.4,
+              0.2
+            ],
+            "online_mistakes": 2,
+            "training_errors": 2
+          },
+          {
+            "epoch": 3,
+            "weights": [
+              -0.4,
+              0.0,
+              0.4,
+              0.2
+            ],
+            "online_mistakes": 3,
+            "training_errors": 2
+          },
+          {
+            "epoch": 4,
+            "weights": [
+              -0.4,
+              0.2,
+              0.4,
+              0.4
+            ],
+            "online_mistakes": 4,
+            "training_errors": 2
+          },
+          {
+            "epoch": 5,
+            "weights": [
+              -0.6,
+              0.2,
+              0.4,
+              0.2
+            ],
+            "online_mistakes": 1,
+            "training_errors": 1
+          },
+          {
+            "epoch": 6,
+            "weights": [
+              -0.6,
+              0.4,
+              0.4,
+              0.2
+            ],
+            "online_mistakes": 2,
+            "training_errors": 0
+          }
+        ],
+        "final_weights": [
+          -0.6,
+          0.4,
+          0.4,
+          0.2
+        ],
+        "final_training_errors": 0
+      },
+      "questions": [
+        {
+          "id": "sixth",
+          "source_kind": "original",
+          "source_page": 32,
+          "prompt_fa": "وزن‌های[بایاس,w1,w2,w3]در پایان دور 6 جدول چیست؟",
+          "solution_fa": "همان ترتیب نمونه‌ها و آستانهٔامتیاز≥0،ردیف ششم جدول را می‌سازد.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "[−0.6,0.4,0.4,0.2]",
+              "[−0.2,0,0.2,0.2]",
+              "[0,0,0,0]"
+            ],
+            "correct_index": 0
+          }
+        },
+        {
+          "id": "first",
+          "source_kind": "original",
+          "source_page": 32,
+          "prompt_fa": "کدام بردار پایان تنها یک دور است؟",
+          "solution_fa": "ردیف اول پس از آموزش در جدول،با خروجی کارگاه یک‌دور مطابق است.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "[−0.6,0.4,0.4,0.2]",
+              "[−0.2,0,0.2,0.2]",
+              "[−0.4,0.2,0.4,0.4]"
+            ],
+            "correct_index": 1
+          }
+        },
+        {
+          "id": "zero",
+          "source_kind": "original",
+          "source_page": 32,
+          "prompt_fa": "چرا در این مثال محاسبهٔ دقیق صفر اهمیت دارد؟",
+          "solution_fa": "Fraction اعداددهدهی را دقیق نگه می‌دارد؛صرف نزدیک‌بودن float به صفر ممکن است تصمیم مرزی را عوض کند.",
+          "answer": {
+            "kind": "choice",
+            "options_fa": [
+              "چون تمام وزن‌ها همیشه صفرند",
+              "چون نرخ یادگیری حذف می‌شود",
+              "چون امتیازصفر به+1 می‌رود و خطای گردکردن می‌تواند مسیر بعدی را تغییر دهد"
+            ],
+            "correct_index": 2
+          }
+        }
+      ]
+    }
+  ]
+}

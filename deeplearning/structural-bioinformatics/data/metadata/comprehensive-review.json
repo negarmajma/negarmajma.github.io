@@ -1,0 +1,90 @@
+{
+  "date": "2026-10-23",
+  "scope": "structural-bioinformatics; scientific and educational review, not a certification",
+  "findings": [
+    {
+      "id": "reference",
+      "correction": "شناسهٔ PubMed مقالهٔ Hu اشتباه بود؛ به 23943614 اصلاح شد."
+    },
+    {
+      "id": "kinetics",
+      "correction": "ناسازگاری V91A و توان چاپ‌شدهٔ P113A ثبت شد؛ KD چاپ‌شده حفظ می‌شود."
+    },
+    {
+      "id": "refinement",
+      "correction": "Rwork/Rfree مقاله با رکورد سپرده‌شده یکسان نیست؛ منبع اعداد باید همراهشان باشد."
+    },
+    {
+      "id": "surface",
+      "correction": "نسبت سطح‌ها از ادعای اعتبارسنجی مستقل به مقایسهٔ عددی مشروط اصلاح شد."
+    },
+    {
+      "id": "statistics",
+      "correction": "مقایسهٔ جهش‌ها بر اساس باقی‌مانده جفت‌شده است؛ واحدها بیمار مستقل نیستند."
+    },
+    {
+      "id": "network",
+      "correction": "۳۶۵ تماس اتمی با ۶۵ جفت باقی‌مانده و درجهٔ ۲ Gln21 تفکیک شد."
+    },
+    {
+      "id": "curriculum",
+      "correction": "۳۰ جلسهٔ درس از هشت بستهٔ ارائه و درس‌های مقدماتی زیست جدا شد."
+    },
+    {
+      "id": "rnaseq",
+      "correction": "پروتکل baseline، پیش/پس و MLR جدا شد؛ تحلیل استنباطی انجام‌شده ادعا نمی‌شود."
+    },
+    {
+      "id": "methods",
+      "correction": "RMSD از هم‌ترازی و مدل یادگیری ماشین از نبود دادهٔ ساختاری آموزشی تفکیک شد."
+    },
+    {
+      "id": "navigation",
+      "correction": "راهنماهای قدیمی با مسیر فعلی و برچسب آرشیو/مکمل مرتبط شدند."
+    }
+  ],
+  "remaining": [],
+  "coverage_note": "Legacy scientific narratives were reconciled with the current scope; historical source measurements retain their original date and limits. Completion is of the classroom editorial/reproducibility review, not certification of every external study.",
+  "identity_review": "reference-identity-review.json: 15 DOI-PMID pairs matched; identity only",
+  "primary_content_review": {
+    "Hu": "PDF Table 3, refinement and interface scope",
+    "Gehin": "Europe PMC full text: design and quoted numerical clinical results",
+    "Tao": "Europe PMC full text: baseline, nominal P, switched-patient followup and early discontinuation",
+    "Bianchi": "Methods and scope of simulated geometry versus function",
+    "Marguerie": "Distinct interventions and limits of mediation inference"
+  },
+  "status": "closed_for_classroom_content_review",
+  "closed_at_utc": "2026-10-23T17:16:33.494212+00:00",
+  "closure_decisions": [
+    {
+      "item": "independent surface calculation",
+      "resolution": "Executed FreeSASA 2.2.1 with matched radii, Shrake-Rupley 960 points and Lee-Richards 100 slices; rigid separation zero; PISA not claimed",
+      "evidence": "data/processed/surface-crosscheck.json"
+    },
+    {
+      "item": "related-work and novelty scope",
+      "resolution": "Focused Europe PMC search recorded with known Hu/Ubah positive controls; remove claims of new epitope discovery or proven novelty",
+      "evidence": "data/metadata/final-literature-search.json"
+    },
+    {
+      "item": "contradictory legacy routes",
+      "resolution": "Rewrite outline/protocol and synchronize source roles, partial/full model scope, execution status and current syllabus links"
+    },
+    {
+      "item": "RNA metadata limits",
+      "resolution": "Explicit eligibility gate and descriptive-only status; do not report inferential analysis or accept ambiguous drug mapping",
+      "evidence": "docs/rnaseq-research-plan.fa.md"
+    },
+    {
+      "item": "PDF consistency",
+      "resolution": "Regenerate handout from current Markdown, review all rendered pages and update hashes",
+      "evidence": "data/metadata/preparation-guide-datasets.json#handout"
+    }
+  ],
+  "research_extensions_not_required_to_finish_review": [
+    "Experimental/biological validation and expert peer review",
+    "Any future PISA run using a documented matching component definition",
+    "Novel inhibitor design, conservation analysis, protein docking and MD",
+    "New inferential RNA analysis after metadata eligibility checks"
+  ]
+}
